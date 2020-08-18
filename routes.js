@@ -2,6 +2,7 @@ const passport = require("passport");
 const express = require("express");
 const router = express.Router();
 const db = require("./models");
+const bcrypt = require("bcryptjs");
 let isAuthenticated = require("./config/middleware/isAuthenticated");
 
 router.post("/api/register", function(req, res) {
@@ -10,7 +11,16 @@ router.post("/api/register", function(req, res) {
   //Do password validation here before attempting to register user, such as checking for password length, captial letters, special characters, etc.
 
   db.User.register(
-    new db.User({ username: req.body.username, email: req.body.email }),
+    new db.User({ 
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password,
+        name: req.body.name,
+        age: req.body.age,
+        gender: req.body.gender,
+        location: req.body.location,
+        userType: req.body.userType
+    }),
     req.body.password,
     function(err, user) {
       if (err) {
