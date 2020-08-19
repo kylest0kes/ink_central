@@ -2,7 +2,6 @@ const passport = require("passport");
 const express = require("express");
 const router = express.Router();
 const db = require("./models");
-const bcrypt = require("bcryptjs");
 let isAuthenticated = require("./config/middleware/isAuthenticated");
 
 router.post("/api/register", function(req, res) {
@@ -14,7 +13,6 @@ router.post("/api/register", function(req, res) {
     new db.User({ 
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password,
         name: req.body.name,
         age: req.body.age,
         gender: req.body.gender,
