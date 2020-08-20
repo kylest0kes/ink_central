@@ -62,12 +62,23 @@ export default function SignUp(props) {
                     </label>
                 </div>
                 <div className="row columns">
-                <fieldset className="fieldset">
-                    <legend>Gender</legend>
-                    <input id="checkbox12" type="checkbox" onChange={props.handleCheck} name="male"/><label htmlFor="checkbox12">Male</label>
-                    <input id="checkbox22" type="checkbox" onChange={props.handleCheck} name="female"/><label htmlFor="checkbox22">Female</label>
-                    <input id="checkbox32" type="checkbox" onChange={props.handleCheck} name="other"/><label htmlFor="checkbox32">Other / Undisclosed</label>
-                </fieldset>
+                    <fieldset className="fieldset">
+                        <legend>Gender</legend>
+                        <div className="polls-options">
+                            <div>
+                                <input onChange={props.handleRadio} type="radio" name="gender" value="male" id="male" />
+                                <label for="male">Male</label>
+                            </div>
+                            <div>
+                                <input onChange={props.handleRadio} type="radio" name="gender" value="female" id="female" />
+                                <label for="female">Female</label>
+                            </div>
+                            <div>
+                                <input onChange={props.handleRadio} type="radio" name="gender" value="other" id="other" />
+                                <label for="other">Other/Prefer Not To Say</label>
+                            </div>
+                        </div>
+                    </fieldset>
                 </div>
                 <div className="row columns">
                 <fieldset className="fieldset">
