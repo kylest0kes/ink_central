@@ -10,14 +10,15 @@ const User = new Schema({
         unique: true,
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please enter a valid email address']
     },
-    created: { type: Date, required: true, default: Date.now() },
-    // create values for 
+    created: { 
+        type: Date, required: true, default: Date.now() 
+    },
     password: {
         type: String,
         trim: true,
         required: "Password is Required",
         validate: [({ length }) => length >= 6, "Password should be longer."]
-      },
+    },
     name: {
         type: String,
         required: "You need a name!"
@@ -49,14 +50,6 @@ const User = new Schema({
     liked: {
         type: Object
     }
-});
-
-User.prototype.validPassword = function(password) {
-    return bcrypt.compareSync(password, this.password);
-}
-
-User.addHook("beforeCreate", function(user) {
-    user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
 });
 
 User.plugin(passportLocalMongoose);
