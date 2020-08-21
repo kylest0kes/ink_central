@@ -7,9 +7,7 @@ export default function SignupPage() {
         password: "",
         name: "",
         age: "",
-        male: false,
-        female: false,
-        other: false,
+        gender: "",
         location: "",
         email: "",
         artist: false,
@@ -32,10 +30,9 @@ export default function SignupPage() {
         e.preventDefault();
         console.log(userState.name);
         console.log(userState.username);
+        console.log(userState.password);
         console.log(userState.age);
-        console.log("male " + userState.male);
-        console.log("female " + userState.female);
-        console.log("other " + userState.other);
+        console.log(userState.gender)
         console.log(userState.location);
         console.log(userState.email);
         console.log("artist " + userState.artist);
@@ -50,6 +47,16 @@ export default function SignupPage() {
                 [name]: true
             })
         }
+    } 
+
+    const handleRadio = e => {
+        const genderChoice = e.target.value;
+        if (e.target.checked) {
+            setUserState({
+                ...userState, 
+                gender: genderChoice
+            })
+        }
     }
 
     return (
@@ -58,6 +65,7 @@ export default function SignupPage() {
             handleCheck={handleCheck}
             handleFormSubmit={handleFormSubmit}
             handleInputChange={handleInputChange}
+            handleRadio={handleRadio}
            /> 
     )
 }

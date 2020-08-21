@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './style.css'
 
 export default function SignUp(props) {
@@ -40,6 +41,16 @@ export default function SignUp(props) {
                     </label>
                 </div>
                 <div className="row columns">
+                    <label>Password
+                        <input 
+                            type="password" 
+                            name="password"
+                            value={props.userState.password}
+                            onChange={props.handleInputChange}
+                        /> 
+                    </label>
+                </div>
+                <div className="row columns">
                     <label>Email
                         <input 
                             type="text" 
@@ -62,12 +73,23 @@ export default function SignUp(props) {
                     </label>
                 </div>
                 <div className="row columns">
-                <fieldset className="fieldset">
-                    <legend>Gender</legend>
-                    <input id="checkbox12" type="checkbox" onChange={props.handleCheck} name="male"/><label htmlFor="checkbox12">Male</label>
-                    <input id="checkbox22" type="checkbox" onChange={props.handleCheck} name="female"/><label htmlFor="checkbox22">Female</label>
-                    <input id="checkbox32" type="checkbox" onChange={props.handleCheck} name="other"/><label htmlFor="checkbox32">Other / Undisclosed</label>
-                </fieldset>
+                    <fieldset className="fieldset">
+                        <legend>Gender</legend>
+                        <div className="polls-options">
+                            <div>
+                                <input onChange={props.handleRadio} type="radio" name="gender" value="male" id="male" />
+                                <label for="male">Male</label>
+                            </div>
+                            <div>
+                                <input onChange={props.handleRadio} type="radio" name="gender" value="female" id="female" />
+                                <label for="female">Female</label>
+                            </div>
+                            <div>
+                                <input onChange={props.handleRadio} type="radio" name="gender" value="other" id="other" />
+                                <label for="other">Other/Prefer Not To Say</label>
+                            </div>
+                        </div>
+                    </fieldset>
                 </div>
                 <div className="row columns">
                 <fieldset className="fieldset">
@@ -79,6 +101,7 @@ export default function SignUp(props) {
                 <button type="submit" className="primary button expanded search-button">
                 Sign Up
                 </button>
+                <Link style={{color:"white", textDecoration:"underline"}} to="/login">Already registered? Click here.</Link>
             </form>
         </div>
     )
