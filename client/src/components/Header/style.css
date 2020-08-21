@@ -1,0 +1,12 @@
+header{
+    height: 150px;
+    position: relative;
+    background-color: rgba(10, 234, 241, 0.8);;
+}
+
+h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
