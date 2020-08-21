@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './style.css'
 
 export default function SignUp(props) {
@@ -35,6 +36,16 @@ export default function SignUp(props) {
                             type="text" 
                             name="username"
                             value={props.userState.username}
+                            onChange={props.handleInputChange}
+                        /> 
+                    </label>
+                </div>
+                <div className="row columns">
+                    <label>Password
+                        <input 
+                            type="password" 
+                            name="password"
+                            value={props.userState.password}
                             onChange={props.handleInputChange}
                         /> 
                     </label>
@@ -90,6 +101,7 @@ export default function SignUp(props) {
                 <button type="submit" className="primary button expanded search-button">
                 Sign Up
                 </button>
+                <Link style={{color:"white", textDecoration:"underline"}} to="/login">Already registered? Click here.</Link>
             </form>
         </div>
     )

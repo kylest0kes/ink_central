@@ -30,6 +30,7 @@ export default function SignupPage() {
         e.preventDefault();
         console.log(userState.name);
         console.log(userState.username);
+        console.log(userState.password);
         console.log(userState.age);
         console.log(userState.gender)
         console.log(userState.location);
