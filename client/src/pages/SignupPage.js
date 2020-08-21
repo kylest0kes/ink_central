@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SignUp from '../components/SignUp';
+import API from '../utils/API';
 
 export default function SignupPage() {
     const [userState, setUserState] = useState({
@@ -28,15 +29,21 @@ export default function SignupPage() {
 
     const handleFormSubmit = e => {
         e.preventDefault();
-        console.log(userState.name);
-        console.log(userState.username);
-        console.log(userState.password);
-        console.log(userState.age);
-        console.log(userState.gender)
-        console.log(userState.location);
-        console.log(userState.email);
-        console.log("artist " + userState.artist);
-        console.log("canvas " + userState.canvas)
+        console.log(userState)
+        API.saveUser({
+            name: userState.name,
+            age: userState.age,
+            username: userState.username,
+            password: userState.password,
+            email: userState.email,
+            location: userState.location,
+            gender: userState.gender,
+            artist: userState.artist,
+            canvas: userState.canvas
+        })
+        .then(result => console.log(result))
+        .catch(err => console.log(err));
+        
     }
     
     const handleCheck = e => {
