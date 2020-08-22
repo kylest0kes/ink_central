@@ -4,6 +4,7 @@ import ViewAllPage from './pages/ViewAllPage'
 // import SignupPage from './pages/SignupPage';
 // import LoginPage from './pages/LoginPage';
 import './App.css';
+import LookingForInk from './pages/LookingForInk';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
     //     </Switch>
     //   </div>
     // </Router>
-    <ViewAllPage />
+    //<ViewAllPage />
+    <LookingForInk />
   );
 }
 
