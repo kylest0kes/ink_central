@@ -63,8 +63,8 @@
 }
 
 .image-hover-wrapper .image-hover-wrapper-banner {
-    background-color: rgba(10, 234, 241, 0.8);
-    color: rgba(243, 20, 50, 0.8);
+    background: #00adcc;
+    color: whitesmoke;
     font-weight: 600;
     left: 0;
     padding: 0.5rem;
