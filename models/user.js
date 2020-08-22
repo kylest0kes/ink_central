@@ -4,14 +4,19 @@ const Schema = mongoose.Schema;
 const passportLocalMongoose = require('passport-local-mongoose');
 
 const User = new Schema({
-    email: {
+    name: {
         type: String,
-        required: 'Email address is required',
-        unique: true,
-        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please enter a valid email address']
+        required: "You need a name!"
     },
-    created: { 
-        type: Date, required: true, default: Date.now() 
+    age: {
+        type: String,
+        trim: true,
+        required: "You need to provide your age!"
+    },
+    username: {
+        type: String,
+        trim: true,
+        required: "You need a username!"
     },
     password: {
         type: String,
@@ -19,36 +24,33 @@ const User = new Schema({
         required: "Password is Required",
         validate: [({ length }) => length >= 6, "Password should be longer."]
     },
-    name: {
+    email: {
         type: String,
-        required: "You need a name!"
-    },
-    username: {
-        type: String,
-        trim: true,
-        required: "You need a username!"
-    },
-    age: {
-        type: String,
-        trim: true,
-        required: "You need to provide your age!"
-    },
-    gender: {
-        type: String,
-        trim: true
+        required: 'Email address is required',
+        unique: true,
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please enter a valid email address']
     },
     location: {
         type: String,
         trim: true,
         required: "You need to provide your location!"
     },
-    userType: {
+    gender: {
         type: String,
+        trim: true
+    },
+    created: { 
+        type: Date, required: true, default: Date.now() 
+    },
+    artist: {
+        type: Boolean,
         trim: true,
         required: "You need to let us know if you are an artist or a canvas!"
     },
-    liked: {
-        type: Object
+    canvas: {
+        type: Boolean,
+        trim: true,
+        required: "You need to let us know if you are an artist or a canvas!"
     }
 });
 

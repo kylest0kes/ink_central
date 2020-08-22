@@ -4,43 +4,45 @@ const router = express.Router();
 const db = require("./models");
 let isAuthenticated = require("./config/middleware/isAuthenticated");
 
-router.post("/api/register", function(req, res) {
+router.post("/api/register", function (req, res) {
   console.log("registering user");
 
   //Do password validation here before attempting to register user, such as checking for password length, captial letters, special characters, etc.
 
   db.User.register(
-    new db.User({ 
-        username: req.body.username,
-        email: req.body.email,
-        name: req.body.name,
-        age: req.body.age,
-        gender: req.body.gender,
-        location: req.body.location,
-        userType: req.body.userType
+    new db.User({
+      name: req.body.name,
+      age: req.body.age,
+      username: req.body.username,
+      password: req.body.password,
+      email: req.body.email,
+      location: req.body.location,
+      gender: req.body.gender,
+      artist: req.body.artist,
+      canvas: req.body.canvas
     }),
     req.body.password,
-    function(err, user) {
+    function (err, user) {
       if (err) {
         console.log(err);
         return res.json(err);
       }
-      passport.authenticate("local")(req, res, function(data) {
+      passport.authenticate("local")(req, res, function (data) {
         res.json(req.user);
       });
     }
   );
 });
 
-router.post("/api/login", function(req, res, next) {
-  passport.authenticate("local", function(err, user, info) {
+router.post("/api/login", function (req, res, next) {
+  passport.authenticate("local", function (err, user, info) {
     if (err) {
       return next(err);
     }
     if (!user) {
       return res.json(info);
     }
-    req.logIn(user, function(err) {
+    req.logIn(user, function (err) {
       if (err) {
         return next(err);
       }
@@ -49,12 +51,12 @@ router.post("/api/login", function(req, res, next) {
   })(req, res, next);
 });
 
-router.get("/api/logout", function(req, res) {
+router.get("/api/logout", function (req, res) {
   req.logout();
   res.json({ message: "logged out" });
 });
 
-router.get("/api/user", function(req, res) {
+router.get("/api/user", function (req, res) {
   console.log("available username");
   if (req.query.username) {
     db.User.find({ username: req.query.username })
@@ -67,7 +69,7 @@ router.get("/api/user", function(req, res) {
   }
 });
 
-router.get("/api/authorized", isAuthenticated, function(req, res) {
+router.get("/api/authorized", isAuthenticated, function (req, res) {
   res.json(req.user);
 });
 
