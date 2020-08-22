@@ -1,5 +1,5 @@
 import React from 'react';
-import ViewAllPage from './pages/ViewAllPage'
+//import ViewAllPage from './pages/ViewAllPage'
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import SignupPage from './pages/SignupPage';
 // import LoginPage from './pages/LoginPage';
