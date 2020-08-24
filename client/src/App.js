@@ -3,8 +3,9 @@ import React from 'react';
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import SignupPage from './pages/SignupPage';
 // import LoginPage from './pages/LoginPage';
-import LookingForInk from './pages/LookingForInk';
-import AvailableInkPage from './pages/AvailableInkPage'
+// import LookingForInkPage from './pages/LookingForInkPage';
+//import AvailableInkPage from './pages/AvailableInkPage';
+import UserPage from './pages/UserPage';
 
 import './App.css';
 
@@ -24,8 +25,9 @@ function App() {
     //   </div>
     // </Router>
     //<ViewAllPage />
-    <AvailableInkPage />
-
+    //<AvailableInkPage />
+    //<LookingForInkPage />
+    <UserPage />
   );
 }
 
