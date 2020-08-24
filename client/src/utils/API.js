@@ -24,4 +24,7 @@ export default {
   isAuthorized: function () {
     return axios.get("/api/authorized");
   },
+  logout: function () {
+    return axios.get("/api/logout");
+  }
 };
