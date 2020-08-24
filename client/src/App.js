@@ -5,7 +5,7 @@ import React from 'react';
 // import LoginPage from './pages/LoginPage';
 // import LookingForInkPage from './pages/LookingForInkPage';
 //import AvailableInkPage from './pages/AvailableInkPage';
-import UserPage from './pages/UserPage';
+import UserHomePage from './pages/UserHomePage';
 
 import './App.css';
 
@@ -27,7 +27,7 @@ function App() {
     //<ViewAllPage />
     //<AvailableInkPage />
     //<LookingForInkPage />
-    <UserPage />
+    <UserHomePage />
   );
 }
 
