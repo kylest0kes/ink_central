@@ -14,7 +14,7 @@ export default function LookingPost() {
                         <p>Post Description</p>
                         <div className="callout">
                             <ul className="menu simple">
-                                <li><a href="https://google.com" target="blank">Posted By: UserProfileLink</a></li>
+                                <li><a href="https://google.com" target="blank">UserProfileLink</a></li>
                             </ul>
                         </div>
                     </div>

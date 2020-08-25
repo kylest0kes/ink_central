@@ -4,7 +4,15 @@ import React, { Component } from 'react';
 import './style.css'
 
 export class CreatePostForm extends Component {
-    
+    //  jquery function to enable pop up for the post form
+    // $(document).mouseup(function (e) {
+    //     var container = $('#contact-panel');
+    //     if (!container.is(e.target) // if the target of the click isn't the container...
+    //     && container.has(e.target).length === 0) // ... nor a descendant of the container
+    //       {
+    //         container.removeClass('is-active');
+    //       }
+    // });
     
     render() {
         return (
