@@ -1,0 +1,15 @@
+form{
+    margin: 10px 15px;
+}
+
+label{
+    font-size: 28px;
+}
+
+button{
+    font-size: 40px;
+    display: block;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}

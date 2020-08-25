@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
+
+import './style.css'
 
 export default function CreatePostForm() {
     return (
         <form>
             <div className="form-group">
                 <label for="exampleFormControlInput1">Title</label>
-                <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+                <input type="email" className="form-control" id="exampleFormControlInput1"/>
             </div>
             <div className="form-group">
                 <label for="exampleFormControlTextarea1">Description</label>
