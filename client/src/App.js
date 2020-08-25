@@ -4,10 +4,10 @@ import React from 'react';
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import SignupPage from './pages/SignupPage';
 // import LoginPage from './pages/LoginPage';
-// import LookingForInkPage from './pages/LookingForInkPage';
-// import AvailableInkPage from './pages/AvailableInkPage';
-//import UserHomePage from './pages/UserHomePage';
-import UserProfilePage from './pages/UserProfilePage';
+//import LookingForInkPage from './pages/LookingForInkPage';
+//import AvailableInkPage from './pages/AvailableInkPage';
+import UserHomePage from './pages/UserHomePage';
+//import UserProfilePage from './pages/UserProfilePage';
 
 
 import './App.css';
@@ -31,8 +31,8 @@ function App() {
     //<ViewAllPage />
     //<AvailableInkPage />
     //<LookingForInkPage />
-    //<UserHomePage />
-    <UserProfilePage />
+    <UserHomePage />
+    //<UserProfilePage />
 
   );
 }
