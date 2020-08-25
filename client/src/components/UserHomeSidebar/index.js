@@ -13,11 +13,11 @@ export default function UserHomeSidebar() {
                 <div className="cell auto">
                     <h5 style={{textAlign: "center"}}>Hello Username!</h5>
                     <div className="user-options">
-                        <button class="button button-rounded-hover">Change Profile Picture</button>
-                        <a class="button button-rounded-hover">View My Profile</a>
-                        <button class="button button-rounded-hover">Edit Profile</button>
+                        <button className="button button-rounded-hover">Change Profile Picture</button>
+                        <a className="button button-rounded-hover">View My Profile</a>
+                        <button className="button button-rounded-hover">Edit Profile</button>
                         <br/>
-                        <a class="button button-rounded-hover">Logout</a>
+                        <a className="button button-rounded-hover">Logout</a>
                     </div>
                 </div>
             </div>
