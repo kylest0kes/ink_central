@@ -5,9 +5,11 @@ import React from 'react';
 // import LoginPage from './pages/LoginPage';
 // import LookingForInkPage from './pages/LookingForInkPage';
 // import AvailableInkPage from './pages/AvailableInkPage';
-import UserHomePage from './pages/UserHomePage';
+//import UserHomePage from './pages/UserHomePage';
+import UserProfilePage from './pages/UserProfilePage';
 
 import './App.css';
+
 
 
 function App() {
@@ -27,7 +29,8 @@ function App() {
     //<ViewAllPage />
     //<AvailableInkPage />
     //<LookingForInkPage />
-    <UserHomePage />
+    //<UserHomePage />
+    <UserProfilePage />
   );
 }
 
