@@ -3,9 +3,6 @@ import Header from '../components/Header';
 import LookingPost from '../components/LookingPost';
 import PostModal from '../components/PostModal';
 
-
-
-
 export default function LookingForInk() {
     return (
         <div>
