@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import LookingPost from '../components/LookingPost';
-import LookingPostForm from '../components/LookingPostForm';
+import CreatePostForm from '../components/CreatePostForm';
 
 
 
@@ -10,7 +10,7 @@ export default function LookingForInk() {
         <div>
             <Header />
             <LookingPost />
-            <LookingPostForm />
+            <CreatePostForm />
         </div>
     )
 }
