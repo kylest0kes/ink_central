@@ -1,4 +1,5 @@
 import React from 'react';
+
 //import ViewAllPage from './pages/ViewAllPage'
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import SignupPage from './pages/SignupPage';
@@ -7,6 +8,7 @@ import React from 'react';
 // import AvailableInkPage from './pages/AvailableInkPage';
 //import UserHomePage from './pages/UserHomePage';
 import UserProfilePage from './pages/UserProfilePage';
+
 
 import './App.css';
 
@@ -31,6 +33,7 @@ function App() {
     //<LookingForInkPage />
     //<UserHomePage />
     <UserProfilePage />
+
   );
 }
 

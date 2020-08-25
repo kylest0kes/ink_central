@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SignUp from '../components/SignUp';
 import API from '../utils/API';
+import { Redirect } from 'react-router-dom';
 
 export default function SignupPage() {
     const [userState, setUserState] = useState({
@@ -12,7 +13,9 @@ export default function SignupPage() {
         location: "",
         email: "",
         artist: false,
-        canvas: false
+        canvas: false,
+        error: "",
+        loggedIn: false
       });
 
       const handleInputChange = e => {
@@ -27,13 +30,14 @@ export default function SignupPage() {
         });
       };
 
+      // form submit event for creating a new user
     const handleFormSubmit = e => {
         e.preventDefault();
         console.log(userState)
         API.saveUser({
             name: userState.name,
             age: userState.age,
-            username: userState.username,
+            username: userState.username.toLowerCase(),
             password: userState.password,
             email: userState.email,
             location: userState.location,
@@ -41,7 +45,17 @@ export default function SignupPage() {
             artist: userState.artist,
             canvas: userState.canvas
         })
-        .then(result => console.log(result))
+        .then(result => {
+            if(result.data.message) {
+                setUserState({
+                    error: result.data.message
+                })
+            } else {
+                console.log("registration Successful!!");
+                API.isAuthorized()
+                setUserState({ ...userState, loggedIn: true })
+            }
+        })
         .catch(err => console.log(err));
         
     }
@@ -64,6 +78,10 @@ export default function SignupPage() {
                 gender: genderChoice
             })
         }
+    }
+
+    if (userState.loggedIn) {
+        return <Redirect to="/home"/>
     }
 
     return (

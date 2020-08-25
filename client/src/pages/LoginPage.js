@@ -1,10 +1,63 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Redirect } from "react-router-dom";
 import Login from '../components/Login';
+import API from '../utils/API';
 
 export default function LoginPage() {
+    const [userState, setUserState] = useState({
+        username: "",
+        password: "",
+        error: "",
+        display: false,
+        redirect: "/",
+        loggedIn: false
+    })
+
+    const login = e => {
+        e.preventDefault();
+        console.log("working")
+        API.login({
+            username: userState.username.toLowerCase(),
+            password: userState.password
+        })
+        .then(res => {
+            if (res.data.message) {
+              setUserState({
+                error: res.data.message
+              });
+            } else {
+              console.log("login successful")
+              API.isAuthorized();
+              setUserState({ ...userState, loggedIn: true })
+            }
+          })
+          .catch(err => {
+            console.log(err);
+            setUserState({ error: "A server error has occured." });
+          });
+    
+        setUserState({ password: "" });
+    }
+
+    const handleInputChange = event => {
+        const { name, value } = event.target;
+        setUserState({
+            ...userState,
+          [name]: value.trim()
+        });
+      };
+
+    if (userState.loggedIn) {
+        return <Redirect to="/home"/>
+    }
+    
     return (
         <div>
-            <Login /> 
+            <Login 
+                login={login}
+                handleInputChange={handleInputChange}
+                userState={userState}
+            /> 
         </div>
     )
 }
