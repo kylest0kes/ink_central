@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import UserHomeSidebar from '../components/UserHomeSidebar';
-import UserHomeContainer from '../components/UserHomeContainer';
+import UserContainer from '../components/UserContainer';
 import UserPostCard from '../components/UserPostCard';
 import UserPostCardContainer from '../components/UserPostCardContainer';
 import UserMobileResponse from '../components/UserMobileResponse';
@@ -13,12 +13,12 @@ export default function UserHomePage() {
         <div>
             <Header />
             <UserHomeSidebar />
-            <UserHomeContainer>
+            <UserContainer>
                 <UserPostCardContainer>
                     <UserMobileResponse />
                     <UserPostCard />
                 </UserPostCardContainer>
-            </UserHomeContainer>    
+            </UserContainer>    
         </div>
     )
 }

@@ -13,6 +13,6 @@ export default function Header(props) {
                 <li><a href="" onClick={props.userLogout}>Logout</a></li>
             </ul>
         </header>
-        // className="is-active"
+        // class to add forselected page: className="is-active"
     )
 }
