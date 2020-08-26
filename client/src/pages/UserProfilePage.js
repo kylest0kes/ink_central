@@ -15,7 +15,7 @@ export default function UserProfilePage() {
             <UserContainer>
                 <UserPostCardContainer>
                     <UserMobileResponse />
-                    <UserProfileCard />                    
+                    <UserProfileCard />   
                 </UserPostCardContainer>
             </UserContainer>
         </div>

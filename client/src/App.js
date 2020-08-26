@@ -8,6 +8,7 @@ import LookingForInkPage from './pages/LookingForInkPage';
 import AvailableInkPage from './pages/AvailableInkPage';
 import UserHomePage from './pages/UserHomePage';
 import UserProfilePage from './pages/UserProfilePage';
+
 import './App.css';
 import API from './utils/API';
 
@@ -23,6 +24,7 @@ function App() {
     console.log("use effect log: " + authState.authorized)
     isAuthorized()
   }, [])
+
 
   const isAuthorized = () => {
     API.isAuthorized()
