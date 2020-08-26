@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
+
+import './style.css'
 
 export default function UserPostCard() {
     return (
-            <article style={{marginRight: "15px", marginLeft: "15px"}} className="grid-container">
+            <article style={{ marginRight: "15px", marginLeft: "15px", width: "100%"}} className="grid-container">
                 <div className="grid-x grid-margin-x small-up-2 medium-up-3 large-up-4">
                     <div style={{width: "100%"}} className="travel-feature-card">
                         <div className="travel-feature-card-header" style={{height: "40px"}}>
@@ -33,7 +35,6 @@ export default function UserPostCard() {
                     </div>
                     
                 </div>
-                <hr/>
             </article>
     )
 }

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import ViewAllPage from './pages/ViewAllPage'
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
@@ -9,6 +10,9 @@ import UserHomePage from './pages/UserHomePage';
 import UserProfilePage from './pages/UserProfilePage';
 import './App.css';
 import API from './utils/API';
+
+import React from 'react';
+
 
 function App() {
   let [authState, setAuthState] = useState({
@@ -37,6 +41,7 @@ function App() {
 
   const logout = e => {
     e.preventDefault();
+
 
     API.logout()
       .then(res => {
