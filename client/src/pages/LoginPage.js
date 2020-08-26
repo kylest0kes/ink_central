@@ -3,14 +3,14 @@ import { Redirect } from "react-router-dom";
 import Login from '../components/Login';
 import API from '../utils/API';
 
-export default function LoginPage() {
+export default function LoginPage(props) {
     const [userState, setUserState] = useState({
         username: "",
         password: "",
         error: "",
         display: false,
         redirect: "/",
-        loggedIn: false
+        loggedIn: true
     })
 
     const login = e => {
@@ -27,7 +27,7 @@ export default function LoginPage() {
               });
             } else {
               console.log("login successful")
-              API.isAuthorized();
+              props.isAuthorized();
               setUserState({ ...userState, loggedIn: true })
             }
           })
@@ -47,16 +47,17 @@ export default function LoginPage() {
         });
       };
 
-    if (userState.loggedIn) {
-        return <Redirect to="/home"/>
-    }
+    // if (userState.loggedIn) {
+    //     return <Redirect to="/home"/>
+    // }
     
     return (
         <div>
             <Login 
                 login={login}
                 handleInputChange={handleInputChange}
-                userState={userState}
+                username={userState.username}
+                password={userState.password}
             /> 
         </div>
     )

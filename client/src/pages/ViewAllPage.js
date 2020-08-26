@@ -1,34 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Redirect } from "react-router-dom";
 import Header from '../components/Header';
 import ViewAllCard from '../components/ViewAllCard';
-import API from '../utils/API';
 
-export default function ViewAllPage() {
-    const [logout, setLogout] = useState({
-        loggedOut: false
-    })
-
-    const userLogout = e => {
-        e.preventDefault();
-        
-        API.logout()
-            .then(res => {
-                setLogout({ loggedOut: true })
-                console.log(res.data.message)
-            })
-            .catch(err => console.log(err));
-    }
-
-    if (logout.loggedOut) {
-        return <Redirect to="/login"/>
-    }
+export default function ViewAllPage(props) {
+    console.log("viewAll log: " + props.authState.authorized)
+    // if (props.authState.authorized) {
+    //     return <Redirect to="/login"/>
+    // }
 
     return (
         <div>
             <Header 
-                logout={logout}
-                userLogout={userLogout}
+                logout={props.logout}
             />
             <ViewAllCard />
             <ViewAllCard />
