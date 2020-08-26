@@ -4,10 +4,10 @@ import AvailablePost from '../components/AvailablePost';
 import PostModal from '../components/PostModal';
 
 
-export default function AvailableInk() {
+export default function AvailableInk(props) {
     return (
         <div>
-            <Header /> 
+            <Header logout={props.logout}/> 
             <AvailablePost />
             <AvailablePost />
             <AvailablePost />
