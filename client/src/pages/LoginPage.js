@@ -46,10 +46,6 @@ export default function LoginPage(props) {
           [name]: value.trim()
         });
       };
-
-    // if (userState.loggedIn) {
-    //     return <Redirect to="/home"/>
-    // }
     
     return (
         <div>

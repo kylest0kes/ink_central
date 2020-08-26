@@ -16,26 +16,31 @@ import API from './utils/API';
 function App() {
   let [authState, setAuthState] = useState({
     authorized: false,
+    display: false
   });
 
   useEffect(() => {
-    console.log("use effect log: " + authState.authorized)
-    isAuthorized()
+    console.log("use effect log: " + authState.authorized);
+    isAuthorized();
   }, [])
 
 
   const isAuthorized = () => {
     API.isAuthorized()
       .then(res => {
-        console.log(res.data.message)
+        console.log("res data message: " + res.data.message)
         setAuthState({
-          authorized: res.data.message ? false : true
+          authorized: res.data.message ? false : true,
+          display: true
         })
         console.log("is auth log: " + authState.authorized)
       })
       .catch(err => {
         console.log(err);
-        setAuthState({ authorized: false });
+        setAuthState({ 
+          authorized: false,
+          display: true 
+        });
       });
   };
 
@@ -52,68 +57,73 @@ function App() {
   }
 
   return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route exact path="/">
-            <SignupPage />
-          </Route>
-          <Route exact path="/login">
-            {authState.authorized ? <Redirect to="/home"/> : <LoginPage isAuthorized={isAuthorized} authorized={authState.authorized} />}
-          </Route>
-          <Route exact path="/home">
+    <React.Fragment>
+      {authState.display ?
+        (<Router>
+          <div className="App">
+            <Switch>
+              <Route exact path="/">
+                <SignupPage />
+              </Route>
+              <Route exact path="/login">
+                {/* <LoginPage isAuthorized={isAuthorized} authorized={authState.authorized} /> */}
+                {authState.authorized ? <Redirect to="/home" /> : <LoginPage isAuthorized={isAuthorized} authorized={authState.authorized} />}
+              </Route>
+              <Route exact path="/home">
                 {authState.authorized ? (
-                  <ViewAllPage 
-                    logout={logout} 
+                  <ViewAllPage
+                    logout={logout}
                     authState={authState}
                   />
                 ) : (
                     <Redirect to="/login" />
                   )}
-          </Route>
-          <Route exact path="/available">
+              </Route>
+              <Route exact path="/available">
                 {authState.authorized ? (
-                  <AvailableInkPage 
-                    logout={logout} 
+                  <AvailableInkPage
+                    logout={logout}
                     authState={authState}
                   />
                 ) : (
                     <Redirect to="/login" />
                   )}
-          </Route>
-          <Route exact path="/looking">
+              </Route>
+              <Route exact path="/looking">
                 {authState.authorized ? (
-                  <LookingForInkPage 
-                    logout={logout} 
+                  <LookingForInkPage
+                    logout={logout}
                     authState={authState}
                   />
                 ) : (
                     <Redirect to="/login" />
                   )}
-          </Route>
-          <Route exact path="/userhome">
+              </Route>
+              <Route exact path="/userhome">
                 {authState.authorized ? (
-                  <UserHomePage 
-                    logout={logout} 
+                  <UserHomePage
+                    logout={logout}
                     authState={authState}
                   />
                 ) : (
                     <Redirect to="/login" />
                   )}
-          </Route>
-          <Route exact path="/profile">
+              </Route>
+              <Route exact path="/profile">
                 {authState.authorized ? (
-                  <UserProfilePage 
-                    logout={logout} 
+                  <UserProfilePage
+                    logout={logout}
                     authState={authState}
                   />
                 ) : (
                     <Redirect to="/login" />
                   )}
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+              </Route>
+            </Switch>
+          </div>
+        </Router>) : ""}
+    </React.Fragment>
+
   );
 }
 
