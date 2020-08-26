@@ -12,8 +12,6 @@ import UserProfilePage from './pages/UserProfilePage';
 import './App.css';
 import API from './utils/API';
 
-import React from 'react';
-
 
 function App() {
   let [authState, setAuthState] = useState({
@@ -75,7 +73,7 @@ function App() {
           </Route>
           <Route exact path="/available">
                 {authState.authorized ? (
-                  <ViewAllPage 
+                  <AvailableInkPage 
                     logout={logout} 
                     authState={authState}
                   />
@@ -85,7 +83,7 @@ function App() {
           </Route>
           <Route exact path="/looking">
                 {authState.authorized ? (
-                  <ViewAllPage 
+                  <LookingForInkPage 
                     logout={logout} 
                     authState={authState}
                   />
@@ -95,7 +93,7 @@ function App() {
           </Route>
           <Route exact path="/userhome">
                 {authState.authorized ? (
-                  <ViewAllPage 
+                  <UserHomePage 
                     logout={logout} 
                     authState={authState}
                   />
@@ -105,7 +103,7 @@ function App() {
           </Route>
           <Route exact path="/profile">
                 {authState.authorized ? (
-                  <ViewAllPage 
+                  <UserProfilePage 
                     logout={logout} 
                     authState={authState}
                   />
