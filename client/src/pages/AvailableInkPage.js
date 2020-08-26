@@ -9,6 +9,10 @@ export default function AvailableInk() {
         <div>
             <Header /> 
             <AvailablePost />
+            <AvailablePost />
+            <AvailablePost />
+            <AvailablePost />
+            <AvailablePost />
             <PostModal />
         </div>
     )

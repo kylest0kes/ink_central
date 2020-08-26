@@ -18,7 +18,7 @@ export default function CreatePostForm() {
                 <button><i className="fas fa-file-upload"></i></button>
             </div>
             <div className="form-group">
-                <input className="btn btn-primary" type="submit" value="Submit"/>
+                <input style={{backgroundColor: "#00adcc", borderColor: "#00adcc"}} className="btn btn-primary" type="submit" value="Submit"/>
             </div>
         </form>
     )

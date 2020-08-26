@@ -12,10 +12,10 @@ export default function AvailablePost() {
                         Available Post Title
                     </h4>
                     <p className="article-author"><em>Artist: <a href="#">Artist Username as Link</a></em></p>
-                    <p className="article-elipsis">Available Post Description</p>
+                    <p className="article-elipsis">Description Text</p>
                 </div>
-                <div className="small-12 medium-3 columns flex-container align-right">
-                    <img src="https://via.placeholder.com/300"/>
+                <div className="small-12 medium-3 columns flex-container">
+                    <img src="https://via.placeholder.com/250"/>
                 </div>
             </div>
         </div>
