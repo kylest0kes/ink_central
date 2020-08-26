@@ -7,24 +7,22 @@ export default function Login(props) {
         <div className="translucent-form-overlay">
             <h3>Login</h3>
             <div className="row columns">
-                <label>Username
-                    <input 
+                <label>Username</label>
+                <input 
                         type="text" 
                         name="username"
-                        value={props.userState.username} 
+                        value={props.username} 
                         onChange={props.handleInputChange}
                     />
-                </label>
             </div>
             <div className="row columns">
-                <label>Password
-                    <input 
+                <label>Password</label>
+                <input 
                         type="password"
                         name="password" 
-                        value={props.userState.password}
+                        value={props.password}
                         onChange={props.handleInputChange}
-                    /> 
-                </label>
+                    />
             </div>
             <button type="submit" name="login" className="primary button expanded search-button" onClick={props.login}>
             Log in
