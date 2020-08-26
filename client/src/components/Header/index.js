@@ -11,7 +11,6 @@ export default function Header(props) {
                 <li><Link to="/home">View All</Link></li>
                 <li><Link to="/looking">Looking For Ink</Link></li>
                 <li><Link to="/available">Available Ink</Link></li>
-                {/* <li><Link to="/logout" onClick={props.logout}>Logout</Link></li> */}
                 <li><a href="" onClick={props.logout}>Logout</a></li>
             </ul>
         </header>

@@ -7,10 +7,10 @@ import UserMobileResponse from '../components/UserMobileResponse';
 import UserProfileCard from '../components/UserProfileCard';
 
 
-export default function UserProfilePage() {
+export default function UserProfilePage(props) {
     return (
         <div>
-            <Header />
+            <Header logout={props.logout}/>
             <UserProfileSidebar />
             <UserContainer>
                 <UserPostCardContainer>

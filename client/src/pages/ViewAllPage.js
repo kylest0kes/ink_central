@@ -11,9 +11,7 @@ export default function ViewAllPage(props) {
 
     return (
         <div>
-            <Header 
-                logout={props.logout}
-            />
+            <Header logout={props.logout} />
             <ViewAllCard />
             <ViewAllCard />
         </div>
