@@ -8,10 +8,10 @@ import UserMobileResponse from '../components/UserMobileResponse';
 
 import '../App.css'
 
-export default function UserHomePage() {
+export default function UserHomePage(props) {
     return (
         <div>
-            <Header />
+            <Header logout={props.logout}/>
             <UserHomeSidebar />
             <UserContainer>
                 <UserPostCardContainer>
