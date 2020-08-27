@@ -4,11 +4,11 @@ const router = express.Router();
 const db = require("./models");
 let isAuthenticated = require("./config/middleware/isAuthenticated");
 
+// =============== User routes =============
 router.post("/api/register", function (req, res) {
   console.log("registering user");
 
   //Do password validation here before attempting to register user, such as checking for password length, captial letters, special characters, etc.
-
   db.User.register(
     new db.User({
       name: req.body.name,
@@ -72,5 +72,32 @@ router.get("/api/user", function (req, res) {
 router.get("/api/authorized", isAuthenticated, function (req, res) {
   res.json(req.user);
 });
+
+// =============== Post routes =============
+router.post("/api/post", function (req, res) {
+  db.Post.create(
+    new db.Post({
+      title: req.body.title,
+      description: req.body.description,
+      image: req.body.image,
+      author: req.body.author,
+      type: req.body.type,
+      username: req.body.username
+    })
+  ).then(dbPost => {
+    console.log(dbPost);
+  })
+  .catch(({ message }) => {
+    console.log(message);
+  });
+});
+
+router.get("/api/post", (req, res) => {
+    db.Post.find({})
+      .then(post => {
+        console.log(post)
+      })
+      .catch(err => console.log(err))
+})
 
 module.exports = router;
