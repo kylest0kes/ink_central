@@ -6,7 +6,7 @@ import './style.css'
 export class CreateFormPost extends Component {
 
     onSuccess = (result) => {
-        console.log(result)
+        console.log(result.filesUploaded[0].url)
     }
     
     onError = (error) => {
@@ -14,6 +14,9 @@ export class CreateFormPost extends Component {
     }
 
     render() {
+        const basicOptions = {
+
+        }
         return (
             <form>
                 <div className="form-group">
@@ -28,7 +31,7 @@ export class CreateFormPost extends Component {
                     apikey={"Aho8KdLp5TCKolnTXxw3Tz"}
                     buttonText="Upload Photo"
                     buttonClass="ui medium button gray"
-                    //options={basicOptions}
+                    options={basicOptions}
                     onSuccess={this.onSuccess}
                     onError={this.onError}
                 />
