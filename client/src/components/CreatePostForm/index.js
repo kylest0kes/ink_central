@@ -29,7 +29,7 @@ export class CreateFormPost extends Component {
                 </div>
                 <ReactFilestack
                     apikey={"Aho8KdLp5TCKolnTXxw3Tz"}
-                    buttonText="Upload Photo"
+                    customText="Upload Image"
                     buttonClass="ui medium button gray"
                     options={basicOptions}
                     onSuccess={this.onSuccess}
