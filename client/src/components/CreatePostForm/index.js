@@ -14,9 +14,7 @@ export class CreateFormPost extends Component {
     }
 
     render() {
-        const basicOptions = {
-
-        }
+        
         return (
             <form>
                 <div className="form-group">
@@ -29,9 +27,11 @@ export class CreateFormPost extends Component {
                 </div>
                 <ReactFilestack
                     apikey={"Aho8KdLp5TCKolnTXxw3Tz"}
-                    customText="Upload Image"
-                    buttonClass="ui medium button gray"
-                    options={basicOptions}
+                    componentDisplayMode={{
+                        type: 'button',
+                        customText: 'Upload Image',
+                        customClass: 'ui medium button gray'
+                    }}
                     onSuccess={this.onSuccess}
                     onError={this.onError}
                 />
