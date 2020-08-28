@@ -11,6 +11,7 @@ export default function ViewAllPage(props) {
     useEffect(() => {
         API.getPosts()
         .then(res => {
+            console.log("res.data: ")
             console.log(res.data)
             setPosts({postArr: res.data})
         })
