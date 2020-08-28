@@ -21,6 +21,7 @@ export default function ViewAllPage(props) {
             <Header logout={props.logout} />
             {posts.postArr.map(post => (
                 <ViewAllCard 
+                    id={post.id}
                     title={post.title}
                     description={post.description}
                     image={post.image}
