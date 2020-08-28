@@ -3,7 +3,7 @@ import CreatePostForm from '../CreatePostForm';
 
 import './style.css'
 
-export default function PostModal() {
+export default function PostModal(props) {
     return (
         <div style={{width: "300px", marginRight: "0px"}}>
             {/* <!-- Button trigger modal --> */}
@@ -15,7 +15,9 @@ export default function PostModal() {
             <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
-                        <CreatePostForm />
+                        <CreatePostForm 
+                            authState={props.authState}
+                        />
                     </div>
                 </div>
             </div>

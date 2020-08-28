@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const passportLocalMongoose = require('passport-local-mongoose');
+// const passportLocalMongoose = require('passport-local-mongoose');
 
 const Post = new Schema({
     title: {
@@ -12,19 +12,19 @@ const Post = new Schema({
         required: "Please provide a description!"
     },
     image: String,
-    author: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "User"
-        }
-    ],
+    author:
+    {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    }
+    ,
     type: {
         type: String,
         required: "Please select if you are looking for ink or if you have artwork available"
     },
-    username: String
+    // username: String
 });
 
-Post.plugin(passportLocalMongoose);
+// Post.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model('Post', Post);

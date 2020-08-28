@@ -74,15 +74,14 @@ router.get("/api/authorized", isAuthenticated, function (req, res) {
 
 // =============== Post routes =============
 router.post("/api/post", function (req, res) {
-  db.Post.create(
-    new db.Post({
+  db.Post.create({
       title: req.body.title,
       description: req.body.description,
       image: req.body.image,
       author: req.body.author,
       type: req.body.type,
-      username: req.body.username
-    })
+      // username: req.body.username
+    }
   ).then(dbPost => {
     console.log(dbPost);
   })

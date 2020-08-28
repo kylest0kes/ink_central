@@ -12,7 +12,9 @@ export default function LookingForInk(props) {
             <LookingPost />
             <LookingPost />
             <LookingPost />
-            <PostModal />
+            <PostModal 
+                authState={props.authState}
+            />
         </div>
     )
 }
