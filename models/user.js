@@ -17,12 +17,6 @@ const User = new Schema({
         trim: true,
         required: "You need a username!"
     },
-    password: {
-        type: String,
-        trim: true,
-        required: "Password is Required",
-        validate: [({ length }) => length >= 6, "Password should be longer."]
-    },
     email: {
         type: String,
         required: 'Email address is required',

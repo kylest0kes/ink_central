@@ -4,7 +4,7 @@ export default {
   // Gets all books
   // ============ for later use, make sure you update the routes!!! =========
   getPosts: function() {
-    return axios.get("/api/posts");
+    return axios.get("/api/post");
   },
   // // Gets the book with the given id
   // getUser: function(id) {
