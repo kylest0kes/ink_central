@@ -11,7 +11,7 @@ export class CreateFormPost extends Component {
         description: "",
         image: "",
         author: this.props.authState.user.author,
-        type: "Looking"
+        type: "Available"
         // username: "oisdefnhjs"
     }
 

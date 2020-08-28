@@ -9,14 +9,17 @@ export default function LookingForInk(props) {
         postArr: []
     });
 
+    let sortPostArr = []
+
     useEffect(() => {
         API.getPosts()
         .then(res => {
             console.log(res.data);
             res.data.forEach(post => {
                 if(post.type === "Looking") {
-                    setPosts({postArr: res.data});
+                    sortPostArr.push(post)
                 }
+                setPosts({postArr: sortPostArr});
             }); 
         });
     }, []);
