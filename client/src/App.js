@@ -8,7 +8,6 @@ import LookingForInkPage from './pages/LookingForInkPage';
 import AvailableInkPage from './pages/AvailableInkPage';
 import UserHomePage from './pages/UserHomePage';
 import UserProfilePage from './pages/UserProfilePage';
-
 import './App.css';
 import API from './utils/API';
 
@@ -16,7 +15,8 @@ import API from './utils/API';
 function App() {
   let [authState, setAuthState] = useState({
     authorized: false,
-    display: false
+    display: false,
+    user: {}
   });
 
   useEffect(() => {
@@ -28,12 +28,13 @@ function App() {
   const isAuthorized = () => {
     API.isAuthorized()
       .then(res => {
-        console.log("res data message: " + res.data.message)
+        console.log("user data object: ")
+        console.log(res.data)
         setAuthState({
           authorized: res.data.message ? false : true,
-          display: true
+          display: true,
+          user: res.data.message ? {} : res.data,
         })
-        console.log("is auth log: " + authState.authorized)
       })
       .catch(err => {
         console.log(err);
@@ -63,11 +64,10 @@ function App() {
           <div className="App">
             <Switch>
               <Route exact path="/">
-                <SignupPage />
+              {authState.authorized ? <Redirect to="/home" /> : <SignupPage isAuthorized={isAuthorized} />}
               </Route>
               <Route exact path="/login">
-                {/* <LoginPage isAuthorized={isAuthorized} authorized={authState.authorized} /> */}
-                {authState.authorized ? <Redirect to="/home" /> : <LoginPage isAuthorized={isAuthorized} authorized={authState.authorized} />}
+                {authState.authorized ? <Redirect to="/home" /> : <LoginPage isAuthorized={isAuthorized} />}
               </Route>
               <Route exact path="/home">
                 {authState.authorized ? (

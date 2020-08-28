@@ -3,7 +3,7 @@ import SignUp from '../components/SignUp';
 import API from '../utils/API';
 import { Redirect } from 'react-router-dom';
 
-export default function SignupPage() {
+export default function SignupPage(props) {
     const [userState, setUserState] = useState({
         username: "",
         password: "",
@@ -14,8 +14,7 @@ export default function SignupPage() {
         email: "",
         artist: false,
         canvas: false,
-        error: "",
-        loggedIn: false
+        error: ""
       });
 
       const handleInputChange = e => {
@@ -52,8 +51,7 @@ export default function SignupPage() {
                 })
             } else {
                 console.log("registration Successful!!");
-                API.isAuthorized()
-                setUserState({ ...userState, loggedIn: true })
+                props.isAuthorized()
             }
         })
         .catch(err => console.log(err));
@@ -78,10 +76,6 @@ export default function SignupPage() {
                 gender: genderChoice
             })
         }
-    }
-
-    if (userState.loggedIn) {
-        return <Redirect to="/home"/>
     }
 
     return (

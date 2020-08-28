@@ -14,7 +14,6 @@ router.post("/api/register", function (req, res) {
       name: req.body.name,
       age: req.body.age,
       username: req.body.username,
-      password: req.body.password,
       email: req.body.email,
       location: req.body.location,
       gender: req.body.gender,
@@ -95,7 +94,7 @@ router.post("/api/post", function (req, res) {
 router.get("/api/post", (req, res) => {
     db.Post.find({})
       .then(post => {
-        console.log(post)
+        res.json(post)
       })
       .catch(err => console.log(err))
 })
