@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import LookingPost from '../components/LookingPost';
 import PostModal from '../components/PostModal';
 import API from "../utils/API";
+import Footer from '../components/Footer';
 
 export default function LookingForInk(props) {
     const [posts, setPosts] = useState({
@@ -40,6 +41,7 @@ export default function LookingForInk(props) {
             <PostModal 
                 authState={props.authState}
             />
+            <Footer />
         </div>
     )
 }

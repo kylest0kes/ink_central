@@ -8,6 +8,7 @@ import UserMobileResponse from '../components/UserMobileResponse';
 import PostModal from '../components/PostModal';
 
 import '../App.css'
+import Footer from '../components/Footer';
 
 export default function UserHomePage(props) {
     return (
@@ -23,6 +24,7 @@ export default function UserHomePage(props) {
             <PostModal 
                 authState={props.authState}
             /> 
+            <Footer />
         </div>
     )
 }

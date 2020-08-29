@@ -4,6 +4,7 @@ import ViewAllCard from '../components/ViewAllCard';
 import PostModal from '../components/PostModal'
 import API from "../utils/API";
 import Container from '../components/Container';
+import Footer from '../components/Footer';
 
 export default function ViewAllPage(props) {
     const [posts, setPosts] = useState({
@@ -39,6 +40,7 @@ export default function ViewAllPage(props) {
             <PostModal 
                 authState={props.authState}
             /> 
+            <Footer />
         </div>
     )
 }
