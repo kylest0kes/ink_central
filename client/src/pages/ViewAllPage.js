@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import ViewAllCard from '../components/ViewAllCard';
+import PostModal from '../components/PostModal'
 import API from "../utils/API";
 
 export default function ViewAllPage(props) {
@@ -29,7 +30,10 @@ export default function ViewAllPage(props) {
                     type={post.type}
                     author={post.author}
                 />
-    ))}
+            ))}
+            <PostModal 
+                authState={props.authState}
+            /> 
         </div>
     )
 }

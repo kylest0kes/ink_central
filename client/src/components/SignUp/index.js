@@ -74,7 +74,7 @@ export default function SignUp(props) {
                 </div>
                 <div className="row columns">
                     <fieldset className="fieldset">
-                        <legend>Gender</legend>
+                        <legend style={{width: "50px"}}>Gender</legend>
                         <div className="polls-options">
                             <div>
                                 <input onChange={props.handleRadio} type="radio" name="gender" value="male" id="male" />
@@ -93,7 +93,7 @@ export default function SignUp(props) {
                 </div>
                 <div className="row columns">
                 <fieldset className="fieldset">
-                    <legend>I am a...</legend>
+                    <legend style={{width: "90px"}}>I am a...</legend>
                     <input id="checkbox12" type="checkbox" onChange={props.handleCheck} name="artist"/><label htmlFor="checkbox12">Artist</label>
                     <input id="checkbox22" type="checkbox" onChange={props.handleCheck} name="canvas"/><label htmlFor="checkbox22">Canvas</label>
                 </fieldset>
