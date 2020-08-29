@@ -11,7 +11,8 @@ export default function AvailablePost(props) {
                     <h4 style={{marginLeft: "8px"}}  className="article-title">
                         {props.title}
                     </h4>
-                    <p className="article-author"><em>Artist: <a href="#">{props.user}</a></em></p>
+                    {/* need to find out how to get props.email in the mailto href */}
+                    <p className="article-author"><em>Artist: <a href="#">{props.user}</a></em> <a href="mailto:`${props.email}`" target="blank"><i class="fas fa-envelope"></i></a> </p>
                     <p style={{height: "170px", overflow: "auto"}} className="article-elipsis">{props.description}</p>
                 </div>
                 <div className="small-12 medium-3 columns flex-container availableImg">

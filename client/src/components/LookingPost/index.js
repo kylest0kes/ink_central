@@ -15,6 +15,7 @@ export default function LookingPost(props) {
                         <div className="callout">
                             <ul className="menu simple">
                                 <li><a href="https://google.com" target="blank">{props.user}</a></li>
+                                <li><a href="mailto:`${props.email}`" target="blank"><i class="fas fa-envelope"></i></a></li>
                             </ul>
                         </div>
                     </div>
