@@ -9,6 +9,7 @@ export default function Footer() {
                 <p className="footer-title">Ink Central</p>
                 <a target="blank" className="project-github" href="https://github.com/kylest0kes/ink_central"><i className="project-github fab fa-github"></i></a>
                 <p className="footer-title"><span>&#169;</span> 2020 </p>
+                <hr/>
                 <div className="footer-ul">
                     <h6>Bryce Speirs</h6>
                     <ul className="menu align-center">
@@ -16,7 +17,6 @@ export default function Footer() {
                         <li><a target="blank" className="footer-links" href="https://www.linkedin.com/in/bryce-speirs-bb1319199/"><i className="footer-links fab fa-linkedin"></i></a></li>
                     </ul>
                 </div>
-                
                 <div className="footer-ul">
                     <h6>Kyle Stokes</h6>
                 <ul className="menu align-center">
