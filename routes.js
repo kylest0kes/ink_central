@@ -69,7 +69,6 @@ router.get("/api/user", function (req, res) {
 });
 
 router.get("/api/users", function (req, res) {
-  console.log("looking for all users: ");
   db.User.find({})
     .then(result => {
       res.json(result)
@@ -92,9 +91,8 @@ router.post("/api/post", function (req, res) {
       user: req.body.user
     }
   ).then(dbPost => {
-    console.log(dbPost);
     db.User.findOneAndUpdate({}, { $push: { posts: dbPost._id } }, { new: true })
-      .then(link => console.log(link))
+      .then(link => console.log("user updated server side"))
       .catch(err => err)
   })
   .catch(({ message }) => {

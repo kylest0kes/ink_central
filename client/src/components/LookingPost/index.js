@@ -14,7 +14,7 @@ export default function LookingPost(props) {
                         <p>{props.description}</p>
                         <div className="callout">
                             <ul className="menu simple">
-                                <li><a href="https://google.com" target="blank">UserProfileLink</a></li>
+                                <li><a href="https://google.com" target="blank">{props.user}</a></li>
                             </ul>
                         </div>
                     </div>

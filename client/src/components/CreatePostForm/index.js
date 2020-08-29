@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactFilestack from 'filestack-react';
 import API from "../../utils/API";
-
 import './style.css'
 
 export class CreateFormPost extends Component {
@@ -32,7 +31,7 @@ export class CreateFormPost extends Component {
     };
 
     createPost = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         API.makePost({
             title: this.state.title,
             description: this.state.description,
@@ -42,9 +41,8 @@ export class CreateFormPost extends Component {
             user: this.state.user
         })
             .then(res => {
-                console.log(res);
+                console.log("Post Created!")
                 // ======= we need to relocate the user from here =======
-                Location.replace("/home");
             })
             .catch(err => console.log(err))
     }

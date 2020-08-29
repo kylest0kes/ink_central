@@ -34,6 +34,7 @@ export default function AvailableInk(props) {
                 image={post.image}
                 type={post.type}
                 author={post.author}
+                user={post.user}
                 />
             ))}
             <PostModal authState={props.authState}/>
