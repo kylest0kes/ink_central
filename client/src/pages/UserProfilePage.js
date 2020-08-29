@@ -6,7 +6,7 @@ import UserPostCardContainer from '../components/UserPostCardContainer';
 import UserMobileResponse from '../components/UserMobileResponse';
 import UserProfileCard from '../components/UserProfileCard';
 import PostModal from '../components/PostModal';
-import Footer from '../components/Footer';
+
 
 
 export default function UserProfilePage(props) {
@@ -23,7 +23,7 @@ export default function UserProfilePage(props) {
             <PostModal 
                 authState={props.authState}
             /> 
-            <Footer />
+
         </div>
     )
 }
