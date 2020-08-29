@@ -7,8 +7,8 @@ export default function PostModal(props) {
     return (
         <div style={{width: "300px", marginRight: "0px"}}>
             {/* <!-- Button trigger modal --> */}
-            <button type="button" className="modalBtn btn fixed-bottom" data-toggle="modal" data-target="#exampleModal">
-            <i class="fas fa-plus-circle"></i>
+            <button type="button" className="modalBtn btn fixed-bottom" title="Create Post" data-toggle="modal" data-target="#exampleModal">
+                <i class="fas fa-plus-circle"></i>
             </button>
 
             {/* <!-- Modal --> */}
