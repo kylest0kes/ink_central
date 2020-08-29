@@ -11,7 +11,7 @@ export default function AvailablePost(props) {
                     <h4 className="article-title">
                         {props.title}
                     </h4>
-                    <p className="article-author"><em>Artist: {props.user}<a href="#">Artist Username as Link</a></em></p>
+                    <p className="article-author"><em>Artist: <a href="#">{props.user}</a></em></p>
                     <p className="article-elipsis">{props.description}</p>
                 </div>
                 <div className="small-12 medium-3 columns flex-container">

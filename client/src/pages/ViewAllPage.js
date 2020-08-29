@@ -26,11 +26,13 @@ export default function ViewAllPage(props) {
                 {posts.postArr.map(post => (
                     <ViewAllCard 
                         id={post.id}
+                        key={post.id}
                         title={post.title}
                         description={post.description}
                         image={post.image}
                         type={post.type}
                         author={post.author}
+                        user={post.user}
                     />
                 ))}
             </Container>
