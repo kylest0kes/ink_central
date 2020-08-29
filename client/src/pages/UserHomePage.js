@@ -5,6 +5,7 @@ import UserContainer from '../components/UserContainer';
 import UserPostCard from '../components/UserPostCard';
 import UserPostCardContainer from '../components/UserPostCardContainer';
 import UserMobileResponse from '../components/UserMobileResponse';
+import PostModal from '../components/PostModal';
 
 import '../App.css'
 
@@ -18,7 +19,10 @@ export default function UserHomePage(props) {
                     <UserMobileResponse />
                     <UserPostCard />
                 </UserPostCardContainer>
-            </UserContainer>    
+            </UserContainer>   
+            <PostModal 
+                authState={props.authState}
+            /> 
         </div>
     )
 }

@@ -5,6 +5,7 @@ import UserContainer from '../components/UserContainer';
 import UserPostCardContainer from '../components/UserPostCardContainer';
 import UserMobileResponse from '../components/UserMobileResponse';
 import UserProfileCard from '../components/UserProfileCard';
+import PostModal from '../components/PostModal';
 
 
 export default function UserProfilePage(props) {
@@ -18,6 +19,9 @@ export default function UserProfilePage(props) {
                     <UserProfileCard />   
                 </UserPostCardContainer>
             </UserContainer>
+            <PostModal 
+                authState={props.authState}
+            /> 
         </div>
     )
 }
