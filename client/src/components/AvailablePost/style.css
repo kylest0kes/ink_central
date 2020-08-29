@@ -94,6 +94,11 @@
     margin-right: 0.25rem;
 }
 
+.availableImg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 
 
