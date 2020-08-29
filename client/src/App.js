@@ -57,8 +57,13 @@ function App() {
       .catch(err => console.log(err));
   }
 
+  const checkUser = () => {
+    console.log(authState.user)
+  }
+
   return (
     <React.Fragment>
+      {/* <button onClick={checkUser}>Click me</button> */}
       {authState.display ?
         (<Router>
           <div className="App">

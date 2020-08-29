@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Redirect } from "react-router-dom";
 import Login from '../components/Login';
 import API from '../utils/API';
 

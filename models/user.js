@@ -44,7 +44,13 @@ const User = new Schema({
         type: Boolean,
         trim: true,
         required: "You need to let us know if you are an artist or a canvas!"
-    }
+    },
+    posts :[
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Post"
+        }
+    ]
 });
 
 User.plugin(passportLocalMongoose);
