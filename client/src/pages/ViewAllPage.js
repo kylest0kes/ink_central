@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import ViewAllCard from '../components/ViewAllCard';
 import PostModal from '../components/PostModal'
 import API from "../utils/API";
+import Container from '../components/Container';
 
 export default function ViewAllPage(props) {
     const [posts, setPosts] = useState({
@@ -21,16 +22,18 @@ export default function ViewAllPage(props) {
     return (
         <div>
             <Header logout={props.logout} />
-            {posts.postArr.map(post => (
-                <ViewAllCard 
-                    id={post.id}
-                    title={post.title}
-                    description={post.description}
-                    image={post.image}
-                    type={post.type}
-                    author={post.author}
-                />
-            ))}
+            <Container>
+                {posts.postArr.map(post => (
+                    <ViewAllCard 
+                        id={post.id}
+                        title={post.title}
+                        description={post.description}
+                        image={post.image}
+                        type={post.type}
+                        author={post.author}
+                    />
+                ))}
+            </Container>
             <PostModal 
                 authState={props.authState}
             /> 
