@@ -22,7 +22,10 @@ const Post = new Schema({
         type: String,
         required: "Please select if you are looking for ink or if you have artwork available"
     },
-    // username: String
+    user: {
+        type: String,
+        required: "You need a username"
+    }
 });
 
 // Post.plugin(passportLocalMongoose);

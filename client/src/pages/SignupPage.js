@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import SignUp from '../components/SignUp';
 import API from '../utils/API';
-import { Redirect } from 'react-router-dom';
 
 export default function SignupPage(props) {
     const [userState, setUserState] = useState({
