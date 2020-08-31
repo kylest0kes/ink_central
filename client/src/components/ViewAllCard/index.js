@@ -19,9 +19,9 @@ export default function ViewAllCard(props) {
         <div className="cell image-hover-wrapper">
             <span className="image-hover-wrapper-banner">{props.title}</span>
             {/* this will be a link to the artists user profile */}
-            <a href="#"><img alt="img" src={props.image} />
+            <a href="#"><img alt="img" src={props.image}/>
             <span className="image-hover-wrapper-reveal" onClick={getUserInfo}>
-                <p>{props.user}<br/><i className="fas fa-user" aria-hidden="true"></i></p>
+                <p>{props.user}<br/><i className="fas fa-user" aria-hidden="true"></i><br/>{props.type}</p>
             </span>
             </a>
         </div>

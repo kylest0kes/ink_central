@@ -8,6 +8,7 @@ import UserProfileCard from '../components/UserProfileCard';
 import PostModal from '../components/PostModal';
 
 
+
 export default function UserProfilePage(props) {
     return (
         <div>
@@ -22,6 +23,7 @@ export default function UserProfilePage(props) {
             <PostModal 
                 authState={props.authState}
             /> 
+
         </div>
     )
 }

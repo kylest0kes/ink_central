@@ -74,15 +74,25 @@ export class CreateFormPost extends Component {
                     <label for="Available">Available</label>
                 </div>
                 <div className="form-group">
-                    <label for="exampleFormControlInput1">Title</label>
+                    <label style={{fontWeight: "bold"}} for="exampleFormControlInput1">Title:</label>
                     <input type="text" className="form-control" id="exampleFormControlInput1" onChange={this.handleInputChange} value={this.state.title} name="title" />
                 </div>
+                <hr/>
                 <div className="form-group">
-                    <label for="exampleFormControlTextarea1">Description</label>
+                    <label style={{fontWeight: "bold"}} for="exampleFormControlTextarea1">Description:</label>
                     <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" onChange={this.handleInputChange} value={this.state.description} name="description"></textarea>
                 </div>
+                <hr/>
                 <div className="form-group">
-                    <label for="exampleFormControlTextarea1">Upload Image</label>
+                    <label style={{fontWeight: "bold"}} for="exampleFormControlTextarea1">Post Type:</label>
+                    <input type="radio" id="looking" name="postType" value="Looking" onChange={this.handleRadio} />
+                    <label for="Looking">Looking</label>
+                    <input type="radio" id="available" name="postType" value="Available" onChange={this.handleRadio}/>
+                    <label for="Available">Available</label>
+                </div>
+                <hr/>
+                <div className="form-group">
+                    <label style={{fontWeight: "bold"}} for="exampleFormControlTextarea1">Upload Image</label>
                     <ReactFilestack
                         apikey={"Aho8KdLp5TCKolnTXxw3Tz"}
                         componentDisplayMode={{

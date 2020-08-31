@@ -9,6 +9,7 @@ import PostModal from '../components/PostModal';
 
 import '../App.css'
 
+
 export default function UserHomePage(props) {
     return (
         <div>
