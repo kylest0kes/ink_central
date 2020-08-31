@@ -92,11 +92,16 @@ router.post("/api/post", function (req, res) {
     }
   ).then(dbPost => {
     db.User.findOneAndUpdate({}, { $push: { posts: dbPost._id } }, { new: true })
-      .then(link => console.log("user updated server side"))
+      .then(link => {
+        console.log("user updated server side")
+        res.json(dbPost)
+        res.json(link)
+      })
       .catch(err => err)
   })
   .catch(({ message }) => {
-    console.log(message);
+    // console.log(message);
+    res.json(message);
   });
 });
 

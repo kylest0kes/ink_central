@@ -14,7 +14,7 @@ export default function AvailableInk(props) {
     useEffect(() => {
         API.getPosts()
         .then(res => {
-            console.log(res.data);
+            console.log("all posts have been gathered!");
             res.data.forEach(post => {
                 if(post.type === "Available") {
                     sortPostArr.push(post)
