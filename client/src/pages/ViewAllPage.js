@@ -32,6 +32,7 @@ export default function ViewAllPage(props) {
                         type={post.type}
                         author={post.author}
                         user={post.user}
+                        authState={props.authState}
                     />
                 ))}
             </Container>

@@ -68,13 +68,22 @@ router.get("/api/user", function (req, res) {
   }
 });
 
+router.get("/api/user/:username", function (req, res) {
+  db.User.find({ username: req.params.username})
+    .then(result => {
+      console.log("get user by username called!")
+      console.log(req.params.username)
+      res.json(result)
+    });
+});
+
 router.get("/api/users", function (req, res) {
   db.User.find({})
     .then(result => {
       res.json(result)
     })
     .catch(err =>  console.log(err));
-})
+});
 
 router.get("/api/authorized", isAuthenticated, function (req, res) {
   res.json(req.user);

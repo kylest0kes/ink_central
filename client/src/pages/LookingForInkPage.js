@@ -36,6 +36,7 @@ export default function LookingForInk(props) {
                     type={post.type}
                     author={post.author}
                     user={post.user}
+                    authState={props.authState}
                 />))}
             <PostModal 
                 authState={props.authState}
