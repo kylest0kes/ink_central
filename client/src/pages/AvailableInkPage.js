@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import AvailablePost from '../components/AvailablePost';
 import PostModal from '../components/PostModal';
 import API from "../utils/API";
+import Footer from '../components/Footer';
 
 export default function AvailableInk(props) {
     const [posts, setPosts] = useState({
@@ -38,6 +39,7 @@ export default function AvailableInk(props) {
                 />
             ))}
             <PostModal authState={props.authState}/>
+            <Footer />
         </div>
     )
 }

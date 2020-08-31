@@ -1,0 +1,43 @@
+footer{
+    background-color: #00adcc;
+}
+
+.footer-ul{
+    display:inline-block;
+}
+
+h6{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0;
+    color: white;
+}
+
+.footer-title{
+    margin-bottom: 0;
+    color: white;
+}
+
+.footer-links{
+    font-size: larger;
+    color: white;
+}
+
+.footer-links :hover {
+    color: black;
+}
+
+.project-github{
+    font-size: larger;
+    color: white;
+}
+
+.project-github :hover {
+    color: black;
+}
+
+.footer-hr{
+    width: 250px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
