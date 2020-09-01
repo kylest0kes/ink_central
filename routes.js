@@ -85,6 +85,15 @@ router.get("/api/users", function (req, res) {
     .catch(err =>  console.log(err));
 });
 
+// For displaying profile pages when user != authorised user
+router.get("/profile/:id", function (req, res) {
+  db.User.find({_id: req.params.id})
+    .then(result => {
+      res.json(result)
+    })
+    .catch(err => console.log(err))
+})
+
 router.get("/api/authorized", isAuthenticated, function (req, res) {
   res.json(req.user);
 });

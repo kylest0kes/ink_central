@@ -54,10 +54,6 @@ function App() {
       .catch(err => console.log(err));
   }
 
-  // const checkUser = () => {
-  //   console.log(authState.user)
-  // }
-
   return (
     <React.Fragment>
       {/* <button onClick={checkUser}>Click me</button> */}
@@ -86,6 +82,7 @@ function App() {
                   <AvailableInkPage
                     logout={logout}
                     authState={authState}
+                    setAuthState={setAuthState}
                   />
                 ) : (
                     <Redirect to="/login" />
@@ -111,7 +108,7 @@ function App() {
                     <Redirect to="/login" />
                   )}
               </Route>
-              <Route exact path="/profile">
+              <Route path="/profile">
                 {authState.authorized ? (
                   <UserProfilePage
                     logout={logout}
