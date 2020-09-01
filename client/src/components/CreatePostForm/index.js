@@ -68,12 +68,6 @@ export class CreateFormPost extends Component {
         return (
             <form>
                 <div className="form-group">
-                    <input type="radio" id="looking" name="postType" value="Looking" onChange={this.handleRadio} />
-                    <label for="Looking">Looking</label>
-                    <input type="radio" id="available" name="postType" value="Available" onChange={this.handleRadio} />
-                    <label for="Available">Available</label>
-                </div>
-                <div className="form-group">
                     <label style={{fontWeight: "bold"}} for="exampleFormControlInput1">Title:</label>
                     <input type="text" className="form-control" id="exampleFormControlInput1" onChange={this.handleInputChange} value={this.state.title} name="title" />
                 </div>
