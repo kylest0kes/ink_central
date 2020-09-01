@@ -14,7 +14,7 @@ export default function UserHomePage(props) {
     return (
         <div>
             <Header logout={props.logout}/>
-            <UserHomeSidebar />
+            <UserHomeSidebar authState={props.authState} logout={props.logout}/>
             <UserContainer>
                 <UserPostCardContainer>
                     <UserMobileResponse />

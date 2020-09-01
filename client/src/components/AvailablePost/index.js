@@ -1,7 +1,6 @@
 import React from 'react';
 import API from "../../utils/API";
-
-import './style.css'
+import './style.css';
 
 export default function AvailablePost(props) {
     const getUserInfo = () => {
@@ -9,9 +8,12 @@ export default function AvailablePost(props) {
             .then(result => {
                 console.log(result);
                 if (result.data[0]._id === props.authState.user._id) {
-                    console.log("ID's Match!!");
+                    window.location.replace("/userHome");
                 }
-                else console.log("ID's don't match!");
+                else {
+                    window.location.replace("/profile/" + result.data[0]._id)
+                }
+
             })
             .catch(err => console.log(err));
     }

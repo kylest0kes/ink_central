@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function UserProfileSidebar() {
+export default function UserProfileSidebar(props) {
     return (
         <div style={{top: "200px", bottom: "200px"}} className="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas>
             <div className="grid-y grid-padding-x" style={{height: "100%"}}>
@@ -9,7 +9,7 @@ export default function UserProfileSidebar() {
                     <img alt="img" className="thumbnail" src="https://placehold.it/350x350"/>
                 </div>
                 <div style={{textAlign: "center"}} className="cell auto">
-                    <h4>Username</h4>
+                    <h4>{props.otherUser.user.name}</h4>
                     <hr/>
                     <h6>User Bio</h6>
                 </div>

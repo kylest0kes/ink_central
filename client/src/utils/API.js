@@ -23,5 +23,8 @@ export default {
   },
   logout: function () {
     return axios.get("/api/logout");
+  },
+  getUserById: function (id) {
+    return axios.get("/profile/" + id);
   }
 };
