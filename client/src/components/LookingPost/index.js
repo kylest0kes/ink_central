@@ -15,7 +15,7 @@ export default function LookingPost(props) {
                 else window.location.replace("/profile/" + result.data[0]._id);
             })
             .catch(err => console.log(err));
-    }
+        }
     
     return (
         <article className="grid-container">
@@ -31,6 +31,7 @@ export default function LookingPost(props) {
                                 <li>||</li>
                                 {/* need to find out how to get props.email in the mailto href */}
                                 <li><a href="mailto:{props.email}" target="blank"><i className="fas fa-envelope"></i></a></li>
+
                             </ul>
                         </div>
                     </div>
