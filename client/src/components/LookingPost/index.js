@@ -27,7 +27,7 @@ export default function LookingPost(props) {
                         <p>{props.description}</p>
                         <div className="callout">
                             <ul className="menu simple">
-                                <li><a href="https://google.com" target="blank" name={props.user} onClick={getUserInfo}>{props.user}</a></li>
+                                <li><a name={props.user} onClick={getUserInfo}>{props.user}</a></li>
                                 <li>||</li>
                                 {/* need to find out how to get props.email in the mailto href */}
                                 <li><a href="mailto:{props.email}" target="blank"><i className="fas fa-envelope"></i></a></li>
