@@ -10,10 +10,7 @@ export default function ViewAllCard(props) {
                 if (result.data[0]._id === props.authState.user._id) {
                     window.location.replace("/userHome");
                 }
-                else {
-                    window.location.replace("/profile/" + result.data[0]._id)
-                }
-
+                else window.location.replace("/profile/" + result.data[0]._id)
             })
             .catch(err => console.log(err));
         }
