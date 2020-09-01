@@ -20,7 +20,6 @@ function App() {
   });
 
   useEffect(() => {
-    console.log("use effect log: " + authState.authorized);
     isAuthorized();
   }, [])
 
@@ -28,8 +27,6 @@ function App() {
   const isAuthorized = () => {
     API.isAuthorized()
       .then(res => {
-        console.log("user data object: ")
-        console.log(res.data)
         setAuthState({
           authorized: res.data.message ? false : true,
           display: true,
@@ -57,9 +54,9 @@ function App() {
       .catch(err => console.log(err));
   }
 
-  const checkUser = () => {
-    console.log(authState.user)
-  }
+  // const checkUser = () => {
+  //   console.log(authState.user)
+  // }
 
   return (
     <React.Fragment>

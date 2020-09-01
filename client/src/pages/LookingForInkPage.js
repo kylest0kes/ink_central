@@ -15,7 +15,7 @@ export default function LookingForInk(props) {
     useEffect(() => {
         API.getPosts()
         .then(res => {
-            console.log(res.data);
+            console.log("All posts for 'looking' have been gathered!");
             res.data.forEach(post => {
                 if(post.type === "Looking") {
                     sortPostArr.push(post)
@@ -37,6 +37,7 @@ export default function LookingForInk(props) {
                     type={post.type}
                     author={post.author}
                     user={post.user}
+                    authState={props.authState}
                 />))}
             <PostModal 
                 authState={props.authState}

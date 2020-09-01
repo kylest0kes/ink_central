@@ -31,7 +31,6 @@ export default function SignupPage(props) {
       // form submit event for creating a new user
     const handleFormSubmit = e => {
         e.preventDefault();
-        console.log(userState)
         API.saveUser({
             name: userState.name,
             age: userState.age,

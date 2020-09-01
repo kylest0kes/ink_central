@@ -9,6 +9,9 @@ export default {
   makePost: function(postData) {
     return axios.post("/api/post", postData);
   },
+  getUser: function(username) {
+    return axios.get("/api/user/" +  username);
+  },
   saveUser: function(userData) {
     return axios.post("/api/register", userData);
   },

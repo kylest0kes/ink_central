@@ -14,7 +14,6 @@ export default function LoginPage(props) {
 
     const login = e => {
         e.preventDefault();
-        console.log("working")
         API.login({
             username: userState.username.toLowerCase(),
             password: userState.password

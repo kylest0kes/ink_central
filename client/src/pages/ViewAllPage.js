@@ -14,8 +14,7 @@ export default function ViewAllPage(props) {
     useEffect(() => {
         API.getPosts()
         .then(res => {
-            console.log("res.data: ")
-            console.log(res.data)
+            console.log("All posts have been gathered!")
             setPosts({postArr: res.data})
         })
     }, [])
@@ -34,6 +33,7 @@ export default function ViewAllPage(props) {
                         type={post.type}
                         author={post.author}
                         user={post.user}
+                        authState={props.authState}
                     />
                 ))}
             </Container>

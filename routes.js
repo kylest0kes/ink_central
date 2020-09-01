@@ -68,13 +68,22 @@ router.get("/api/user", function (req, res) {
   }
 });
 
+router.get("/api/user/:username", function (req, res) {
+  db.User.find({ username: req.params.username})
+    .then(result => {
+      console.log("get user by username called!")
+      console.log(req.params.username)
+      res.json(result)
+    });
+});
+
 router.get("/api/users", function (req, res) {
   db.User.find({})
     .then(result => {
       res.json(result)
     })
     .catch(err =>  console.log(err));
-})
+});
 
 router.get("/api/authorized", isAuthenticated, function (req, res) {
   res.json(req.user);
@@ -92,11 +101,16 @@ router.post("/api/post", function (req, res) {
     }
   ).then(dbPost => {
     db.User.findOneAndUpdate({}, { $push: { posts: dbPost._id } }, { new: true })
-      .then(link => console.log("user updated server side"))
+      .then(link => {
+        console.log("user updated server side")
+        res.json(dbPost)
+        res.json(link)
+      })
       .catch(err => err)
   })
   .catch(({ message }) => {
-    console.log(message);
+    // console.log(message);
+    res.json(message);
   });
 });
 

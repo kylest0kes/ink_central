@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from "react-router-dom";
 import ReactFilestack from 'filestack-react';
 import API from "../../utils/API";
 import './style.css'
@@ -40,11 +41,14 @@ export class CreateFormPost extends Component {
             type: this.state.type,
             user: this.state.user
         })
-            .then(res => {
-                console.log("Post Created!")
-                // ======= we need to relocate the user from here =======
-            })
-            .catch(err => console.log(err))
+        .then(res => {
+            if(res.data._id) {
+                console.log("Post success!!");
+                window.location.reload()
+            }
+            else alert("Make sure all feilds have been filled in!");
+        })
+        .catch(err => console.log(err));
     }
 
     onSuccess = (result) => {
@@ -63,6 +67,12 @@ export class CreateFormPost extends Component {
 
         return (
             <form>
+                <div className="form-group">
+                    <input type="radio" id="looking" name="postType" value="Looking" onChange={this.handleRadio} />
+                    <label for="Looking">Looking</label>
+                    <input type="radio" id="available" name="postType" value="Available" onChange={this.handleRadio} />
+                    <label for="Available">Available</label>
+                </div>
                 <div className="form-group">
                     <label style={{fontWeight: "bold"}} for="exampleFormControlInput1">Title:</label>
                     <input type="text" className="form-control" id="exampleFormControlInput1" onChange={this.handleInputChange} value={this.state.title} name="title" />
