@@ -82,7 +82,6 @@ function App() {
                   <AvailableInkPage
                     logout={logout}
                     authState={authState}
-                    setAuthState={setAuthState}
                   />
                 ) : (
                     <Redirect to="/login" />

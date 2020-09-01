@@ -8,9 +8,12 @@ export default function ViewAllCard(props) {
             .then(result => {
                 console.log(result);
                 if (result.data[0]._id === props.authState.user._id) {
-                    console.log("ID's Match!!");
+                    window.location.replace("/userHome");
                 }
-                else console.log("ID's don't match!");
+                else {
+                    window.location.replace("/profile/" + result.data[0]._id)
+                }
+
             })
             .catch(err => console.log(err));
         }
@@ -19,7 +22,7 @@ export default function ViewAllCard(props) {
         <div className="cell image-hover-wrapper">
             <span className="image-hover-wrapper-banner">{props.title}</span>
             {/* this will be a link to the artists user profile */}
-            <a href="#"><img alt="img" src={props.image}/>
+            <a><img alt="img" src={props.image}/>
             <span className="image-hover-wrapper-reveal" onClick={getUserInfo}>
                 <p>{props.user}<br/><i className="fas fa-user" aria-hidden="true"></i><br/>{props.type}</p>
             </span>
