@@ -34,8 +34,6 @@ export default function ViewAllPage(props) {
                         author={post.author}
                         user={post.user}
                         authState={props.authState}
-                        // otherState={setOtherState}
-                        // otherUser={otherUser}
                     />
                 ))}
             </Container>

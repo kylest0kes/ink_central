@@ -10,12 +10,15 @@ export default function LookingPost(props) {
             .then(result => {
                 console.log(result);
                 if (result.data[0]._id === props.authState.user._id) {
-                    console.log("ID's Match!!");
+                    window.location.replace("/userHome");
                 }
-                else console.log("ID's don't match!");
+                else {
+                    window.location.replace("/profile/" + result.data[0]._id)
+                }
+
             })
             .catch(err => console.log(err));
-    }
+        }
     
     return (
         <article className="grid-container">
@@ -27,9 +30,10 @@ export default function LookingPost(props) {
                         <p>{props.description}</p>
                         <div className="callout">
                             <ul className="menu simple">
-                                <li><a href="https://google.com" target="blank" name={props.user} onClick={getUserInfo}>{props.user}</a></li>
-                                {/* need to find out how to get props.email in the mailto href */}
-                                <li><a href="mailto:{props.email}" target="blank"><i class="fas fa-envelope"></i></a></li>
+                                <li><a name={props.user} onClick={getUserInfo}>{props.user}</a></li>
+                                {/* TODO 
+                                need to find out how to get props.email in the mailto href */}
+                                <li><a href={`mailto:${props.email}`} target="blank"><i class="fas fa-envelope"></i></a></li>
                             </ul>
                         </div>
                     </div>
