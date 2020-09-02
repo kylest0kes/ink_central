@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Login from '../components/Login';
 import API from '../utils/API';
+import HeroSliderComp from '../components/HeroSliderComp'
 
 export default function LoginPage(props) {
     const [userState, setUserState] = useState({
@@ -47,6 +48,7 @@ export default function LoginPage(props) {
     
     return (
         <div>
+          <HeroSliderComp />
             <Login 
                 login={login}
                 handleInputChange={handleInputChange}
