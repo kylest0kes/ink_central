@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-// const passportLocalMongoose = require('passport-local-mongoose');
 
 const Post = new Schema({
     title: {
@@ -25,9 +24,12 @@ const Post = new Schema({
     user: {
         type: String,
         required: "You need a username"
+    },
+    date: {
+        type: Date,
+        required: true,
+        default: Date.now()
     }
 });
-
-// Post.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model('Post', Post);

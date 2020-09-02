@@ -15,6 +15,7 @@ export default function ViewAllPage(props) {
         API.getPosts()
         .then(res => {
             console.log("All posts have been gathered!")
+            console.log(res.data)
             setPosts({postArr: res.data})
         })
     }, [])
