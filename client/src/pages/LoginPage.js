@@ -3,7 +3,7 @@ import React from 'react';
 // import API from '../utils/API';
 import LoginHeroSlider from '../components/LoginHeroSlider'
 
-export default function LoginPage() {
+export default function LoginPage(props) {
     // const [userState, setUserState] = useState({
     //     username: "",
     //     password: "",
@@ -48,7 +48,7 @@ export default function LoginPage() {
     
     return (
         <div>
-          <LoginHeroSlider />
+          <LoginHeroSlider isAuthorized={props.isAuthorized}/>
             {/* <Login 
                 login={login}
                 handleInputChange={handleInputChange}
