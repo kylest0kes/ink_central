@@ -2,14 +2,13 @@ import React from 'react';
 import HeroSlider, {
     Slide,
     SideNav,
-    ButtonsNav,
     OverlayContainer
   } from "hero-slider";
-
-  const rockyWaterfall = "https://i.imgur.com/OE5CoEX.jpg";
-  const palauPacificOcean = "https://i.imgur.com/8sPDZCg.jpg";
-  const queposCostaRica = "https://i.imgur.com/cdKGQ0Z.jpg";
-  const mountainView = "https://i.imgur.com/w4jfAOJ.jpg";
+import hero1 from '../../images/hero1.jpeg';
+import hero2 from '../../images/hero2.jpeg';
+import hero3 from '../../images/hero3.jpeg';
+import hero4 from '../../images/hero4.jpeg';
+import hero5 from '../../images/hero5.jpeg';
 
 export default function HeroSliderComp() {
     return (
@@ -29,8 +28,7 @@ export default function HeroSliderComp() {
             slidingDuration: 400,
             slidingDelay: 100,
             shouldAutoplay: true,
-            shouldDisplayButtons: true,
-            autoplayDuration: 8000,
+            autoplayDuration: 3000,
             height: "100vh"
           }}
         >
@@ -40,49 +38,50 @@ export default function HeroSliderComp() {
     
           <Slide
             shouldRenderMask
-            navDescription="Rocky Waterfall"
             background={{
-              backgroundColor: "#2D7791",
               backgroundBlendMode: "luminosity",
               maskBackgroundBlendMode: "luminosity",
-              backgroundImage: rockyWaterfall
+              backgroundImage: hero1
             }}
           />
     
           <Slide
             shouldRenderMask
-            navDescription="Palau - Pacific Ocean"
             background={{
-              backgroundColor: "#8A8A8A",
               backgroundBlendMode: "luminosity",
               maskBackgroundBlendMode: "luminosity",
-              backgroundImage: palauPacificOcean
+              backgroundImage: hero2
             }}
           />
     
           <Slide
             shouldRenderMask
-            navDescription="Quepos - Costa Rica"
             background={{
-              backgroundColor: "#EA2329",
               backgroundBlendMode: "luminosity",
               maskBackgroundBlendMode: "luminosity",
-              backgroundImage: queposCostaRica
+              backgroundImage: hero3
             }}
           />
     
           <Slide
             shouldRenderMask
-            navDescription="Mountain View"
             background={{
-              backgroundColor: "#6D9B98",
               backgroundBlendMode: "luminosity",
               maskBackgroundBlendMode: "luminosity",
-              backgroundImage: mountainView
+              backgroundImage: hero4
+            }}
+          />
+
+          <Slide
+            shouldRenderMask
+            background={{
+              backgroundBlendMode: "luminosity",
+              maskBackgroundBlendMode: "luminosity",
+              backgroundImage: hero5
             }}
           />
     
-          <ButtonsNav />
+
           <SideNav
             position={{
               top: "0",
