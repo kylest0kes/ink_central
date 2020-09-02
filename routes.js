@@ -125,6 +125,7 @@ router.post("/api/post", function (req, res) {
 
 router.get("/api/post", (req, res) => {
     db.Post.find({})
+      .sort({ date: -1 })
       .then(post => {
         res.json(post)
       })
