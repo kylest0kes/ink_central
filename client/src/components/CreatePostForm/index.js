@@ -88,7 +88,7 @@ export class CreateFormPost extends Component {
                 <div className="form-group">
                     <label style={{fontWeight: "bold"}} for="exampleFormControlTextarea1">Upload Image</label>
                     <ReactFilestack
-                        apikey={"Aho8KdLp5TCKolnTXxw3Tz"}
+                        apikey={"AG1DG3OnDQ62gOmYIMFPCz"}
                         componentDisplayMode={{
                             type: 'button',
                             customText: <i class="fas fa-upload"></i>,
