@@ -109,7 +109,7 @@ router.post("/api/post", function (req, res) {
       user: req.body.user
     }
   ).then(dbPost => {
-    db.User.findOneAndUpdate({}, { $push: { posts: dbPost._id } }, { new: true })
+    db.User.findOneAndUpdate({_id: req.body.author}, { $push: { posts: dbPost._id } }, { new: true })
       .then(link => {
         console.log("user updated server side")
         res.json(dbPost)

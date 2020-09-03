@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import UserHomeSidebar from '../components/UserHomeSidebar';
 import UserContainer from '../components/UserContainer';
@@ -11,6 +11,10 @@ import '../App.css'
 
 
 export default function UserHomePage(props) {
+
+    useEffect(()=>{
+        console.log(props.authState.user)
+    }, [])
     return (
         <div>
             <Header logout={props.logout}/>
@@ -18,7 +22,7 @@ export default function UserHomePage(props) {
             <UserContainer>
                 <UserPostCardContainer>
                     <UserMobileResponse />
-                    <UserPostCard />
+                    <UserPostCard authstate={props.authState}/>
                 </UserPostCardContainer>
             </UserContainer>   
             <PostModal 
