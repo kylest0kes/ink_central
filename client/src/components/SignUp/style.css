@@ -6,7 +6,11 @@
     padding: 20px;
     color: #fefefe;
     margin-top: 25px;
+    margin-bottom: 25px;
     margin-left: 45px;
+    padding-top: 5px;
+    height: 100%;
+    overflow: auto;
 }
   
 .translucent-form-overlay .columns.row {
