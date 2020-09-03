@@ -4,7 +4,7 @@ import './style.css'
 
 export default function Login(props) {
     return (
-        <div className="translucent-form-overlay">
+        <div className="login-form">
             <h3>Login</h3>
             <div className="row columns">
                 <label>Username</label>

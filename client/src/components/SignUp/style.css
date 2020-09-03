@@ -7,6 +7,9 @@
     color: #fefefe;
     margin-top: 25px;
     margin-left: 45px;
+    height: 100vh;
+    overflow: auto;
+    margin-bottom: 20px;
 }
   
 .translucent-form-overlay .columns.row {
