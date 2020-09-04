@@ -13,7 +13,7 @@ import '../App.css'
 export default function UserHomePage(props) {
 
     useEffect(()=>{
-        console.log(props.authState.user)
+        console.log(props.authState.user.posts)
     }, [])
     return (
         <div>
@@ -22,7 +22,12 @@ export default function UserHomePage(props) {
             <UserContainer>
                 <UserPostCardContainer>
                     <UserMobileResponse />
-                    <UserPostCard authstate={props.authState}/>
+                    {props.authState.user.posts.map(post => (
+                        <UserPostCard 
+                        authState={props.authState}
+                        id={post}
+                        />
+                    ))}
                 </UserPostCardContainer>
             </UserContainer>   
             <PostModal 
