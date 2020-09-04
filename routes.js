@@ -130,6 +130,30 @@ router.get("/api/post", (req, res) => {
         res.json(post)
       })
       .catch(err => console.log(err))
-})
+});
+
+router.get("/api/post/:id", (req, res) => {
+  db.Post.find({ _id: req.params.id })
+  .sort({ date: -1 })
+  .then(post => {
+    res.json(post)
+  })
+  .catch(err => console.log(err))
+});
+
+router.delete("/api/post/:id", (req, res) => {
+  // sends multiple tasks to database then sends response == comments below show the long way
+  Promise.all([
+    db.User.findOneAndUpdate({ posts: req.params.id }, { $pull: { posts: req.params.id } }), 
+    db.Post.deleteOne({ _id: req.params.id })
+  ])
+  // db.User.findOneAndUpdate({ posts: req.params.id }, { $pull: { posts: req.params.id } })
+  //   .then(() => db.Post.deleteOne({ _id: req.params.id }))
+    .then(result => {
+      console.log(result)
+      res.json(result)
+    })
+    .catch(err => console.log(err))
+});
 
 module.exports = router;
