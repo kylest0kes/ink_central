@@ -3,7 +3,7 @@ import React from 'react';
 // import API from '../utils/API';
 import SignUpHeroSlider from '../components/SignUpHeroSlider';
 
-export default function SignupPage() {
+export default function SignupPage(props) {
     // const [userState, setUserState] = useState({
     //     username: "",
     //     password: "",
@@ -78,7 +78,7 @@ export default function SignupPage() {
     // }
 
     return (
-        <SignUpHeroSlider />
+        <SignUpHeroSlider isAuthorized={props.isAuthorized}/>
         //     <SignUp 
         //     userState={userState}
         //     handleCheck={handleCheck}

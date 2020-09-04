@@ -86,7 +86,7 @@ router.get("/api/users", function (req, res) {
 });
 
 // For displaying profile pages when user != authorised user
-router.get("/profile/:id", function (req, res) {
+router.get("/api/profile/:id", function (req, res) {
   db.User.find({_id: req.params.id})
     .then(result => {
       res.json(result)
@@ -154,6 +154,10 @@ router.delete("/api/post/:id", (req, res) => {
       res.json(result)
     })
     .catch(err => console.log(err))
+});
+
+router.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 module.exports = router;

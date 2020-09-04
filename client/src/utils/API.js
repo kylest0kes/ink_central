@@ -1,8 +1,6 @@
 import axios from "axios";
 
 export default {
-  // Gets all books
-  // ============ for later use, make sure you update the routes!!! =========
   getPosts: function() {
     return axios.get("/api/post");
   },
@@ -25,7 +23,7 @@ export default {
     return axios.get("/api/logout");
   },
   getUserById: function (id) {
-    return axios.get("/profile/" + id);
+    return axios.get("/api/profile/" + id);
   },
   getPostById: function (id) {
     return axios.get("api/post/" + id);
