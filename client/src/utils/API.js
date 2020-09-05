@@ -26,7 +26,7 @@ export default {
     return axios.get("/api/profile/" + id);
   },
   getPostById: function (id) {
-    return axios.get("api/post/" + id);
+    return axios.get("/api/post/" + id);
   },
   deletePost: function (id) {
     return axios.delete("api/post/" + id)

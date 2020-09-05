@@ -20,25 +20,29 @@ export default function UserProfilePage(props) {
         // splitUrl[4] = user _id
         API.getUserById(splitUrl[4])
             .then(result => {
-                setOtherUser({ user: result.data[0]})
+                setOtherUser({ ...otherUser, user: result.data[0] })
             })
             .catch(err => console.log(err))
-    },[])
-    
-    return (
+    }, [])
+
+    if(!otherUser.user._id) return(null)
+
+    else {return (
         <div>
-            <Header logout={props.logout}/>
-            <UserProfileSidebar otherUser={otherUser}/>
+            <Header logout={props.logout} />
+            <UserProfileSidebar otherUser={otherUser} />
             <UserContainer>
                 <UserPostCardContainer>
                     <UserMobileResponse />
-                    <UserProfileCard />   
+                    {otherUser.user.posts.map(post => (
+                        <UserProfileCard id={post} otherUser={otherUser} />
+                    ))}
                 </UserPostCardContainer>
             </UserContainer>
-            <PostModal 
+            <PostModal
                 authState={props.authState}
-            /> 
-
+            />
         </div>
-    )
+    )}
 }
+
