@@ -9,11 +9,8 @@ export default function UserPostCard(props) {
     })
 
     useEffect(()=>{
-        console.log(props.authState.user)
-        API.getPostById(props.id, {user: props.authState.user.user})
+        API.getPostById(props.id)
         .then(res => {
-            console.log("res.data: ")
-            console.log(res.data[0]);
             setPost({postObj: res.data[0]});
         });
     }, [])

@@ -11,10 +11,6 @@ import '../App.css'
 
 
 export default function UserHomePage(props) {
-
-    useEffect(()=>{
-        console.log(props.authState.user.posts)
-    }, [])
     return (
         <div>
             <Header logout={props.logout}/>
