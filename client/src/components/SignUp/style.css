@@ -2,15 +2,15 @@
 .translucent-form-overlay {
     max-width: 500px;
     width: 100%;
+    max-height: 1060px;
+    height: 100%;
+    overflow: auto;
     background-color: rgba(54, 54, 54, 0.8);
     padding: 20px;
     color: #fefefe;
     margin-top: 25px;
     margin-bottom: 25px;
     margin-left: 45px;
-    padding-top: 5px;
-    height: 100%;
-    overflow: auto;
 }
   
 .translucent-form-overlay .columns.row {

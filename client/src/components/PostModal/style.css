@@ -1,6 +1,7 @@
 .modalBtn{
-    margin-left: 30px;
-    margin-bottom: 30px;
+    position: fixed;
+    right: 100px;
+    bottom: 55px;
     font-size: 50px;
     color: green;
 }
