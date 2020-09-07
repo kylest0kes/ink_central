@@ -1,6 +1,7 @@
 .subnav-hero-section {
     text-align: center;
-    background: #00adcc;
+    /* background: #00adcc; */
+    background-image: url("../../images/jakob-braun-LmGT_iY-ykc-unsplash.jpg");
     background-size: cover;
     position: relative;
     overflow: visible;
@@ -52,4 +53,9 @@
 .subnav-hero-subnav li a:hover {
     background: rgba(254, 254, 254, 0.15);
 }
-  
+
+#image-div {
+    background-image: url("../../images/Logo\ \(2\).png");
+    height: 181px;
+    width: 321px;
+}

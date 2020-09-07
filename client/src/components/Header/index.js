@@ -5,7 +5,9 @@ import './style.css'
 export default function Header(props) {
     return (
         <header className="subnav-hero-section">
-            <h1 className="subnav-hero-headline">Ink Central</h1>
+            <div id="image-div">
+
+            </div>
             <ul className="subnav-hero-subnav">
                 <li><Link to="/userhome">Home</Link></li>
                 <li><Link to="/home">View All</Link></li>
