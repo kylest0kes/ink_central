@@ -20,7 +20,7 @@ export default function UserProfileCard(props) {
             <span className="image-hover-wrapper-banner">{post.postObj.title}</span>
             <a href="mailto:artistemail@email.com"><img alt="img" src={post.postObj.image}/>
             <span className="image-hover-wrapper-reveal">
-                <p>{props.otherUser.user.name}<br/><i class="far fa-paper-plane"></i></p>
+                <p><i class="far fa-paper-plane profile-icon"></i></p>
                 <p>{post.postObj.description}</p>
             </span>
             </a>
