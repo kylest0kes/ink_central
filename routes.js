@@ -19,7 +19,8 @@ router.post("/api/register", function (req, res) {
       location: req.body.location,
       gender: req.body.gender,
       artist: req.body.artist,
-      canvas: req.body.canvas
+      canvas: req.body.canvas,
+      profilePic: "https://placehold.it/350x350"
     }),
     req.body.password,
     function (err, user) {
@@ -101,8 +102,12 @@ router.get("/api/authorized", isAuthenticated, function (req, res) {
 
 // For editing profile information
 router.put("/api/user/:id", function (req, res) {
-  db.User.findOneAndUpdate({ _id: req.body.id }, { profilePic: req.body.image })
-    .then(result => console.log(result))
+  console.log(req.body.profilePic)
+  db.User.findOneAndUpdate({ _id: req.params.id }, { profilePic: req.body.profilePic })
+    .then(result => {
+      console.log("Router.put log: ")
+      console.log(result)
+    })
     .catch(err => console.log(err))
 })
 
