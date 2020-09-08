@@ -6,7 +6,7 @@ export default function UserProfileSidebar(props) {
             <div className="grid-y grid-padding-x" style={{height: "100%"}}>
                 <br/>
                 <div className="cell shrink">
-                    <img alt="img" className="thumbnail" src="https://placehold.it/350x350"/>
+                    <img alt="img" className="thumbnail" src={props.otherUser.user.profilePic}/>
                 </div>
                 <div style={{textAlign: "center"}} className="cell auto">
                     <h4>{props.otherUser.user.name}</h4>
