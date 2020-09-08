@@ -99,6 +99,13 @@ router.get("/api/authorized", isAuthenticated, function (req, res) {
   res.json(req.user);
 });
 
+// For editing profile information
+router.put("/api/user/:id", function (req, res) {
+  db.User.findOneAndUpdate({ _id: req.body.id }, { profilePic: req.body.image })
+    .then(result => console.log(result))
+    .catch(err => console.log(err))
+})
+
 // =============== Post routes =============
 router.post("/api/post", function (req, res) {
   db.Post.create({

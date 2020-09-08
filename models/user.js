@@ -50,7 +50,9 @@ const User = new Schema({
             type: Schema.Types.ObjectId,
             ref: "Post"
         }
-    ]
+    ],
+    // section for profile picture, not required so user can add after account creation
+    profilePic: String
 });
 
 User.plugin(passportLocalMongoose);
