@@ -30,5 +30,12 @@ export default {
   },
   deletePost: function (id) {
     return axios.delete("api/post/" + id)
+  },
+  uploadProfilePic: function(id, profilePic) {
+    console.log("id: ")
+    console.log(id)
+    console.log("profile pic: ")
+    console.log(profilePic)
+    return axios.put("/api/user/" + id, profilePic)
   }
 };
