@@ -1,0 +1,8 @@
+#logo-div {
+    background-image: url("../../images/Logo\ \(2\).png");
+    height: 181px;
+    width: 321px;
+    position: fixed;
+    right: 200px;
+    top: 45px;
+}

@@ -11,6 +11,7 @@ import hero2 from '../../images/hero2.jpeg';
 import hero3 from '../../images/hero3.jpeg';
 import hero4 from '../../images/hero4.jpeg';
 import hero5 from '../../images/hero5.jpeg';
+import Logo from '../Logo';
 
 export default function LoginHeroSlider(props) {
   const [userState, setUserState] = useState({
@@ -85,6 +86,7 @@ export default function LoginHeroSlider(props) {
                   username={userState.username}
                   password={userState.password}
               /> 
+              <Logo />
           </OverlayContainer>
     
           <Slide

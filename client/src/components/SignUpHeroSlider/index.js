@@ -11,6 +11,7 @@ import hero2 from '../../images/hero2.jpeg';
 import hero3 from '../../images/hero3.jpeg';
 import hero4 from '../../images/hero4.jpeg';
 import hero5 from '../../images/hero5.jpeg';
+import Logo from '../Logo';
 
 
 export default function SignUpHeroSlider(props) {
@@ -118,6 +119,7 @@ export default function SignUpHeroSlider(props) {
             handleInputChange={handleInputChange}
             handleRadio={handleRadio}
            /> 
+           <Logo />
           </OverlayContainer>
     
           <Slide
